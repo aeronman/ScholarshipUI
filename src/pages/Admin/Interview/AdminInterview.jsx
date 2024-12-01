@@ -20,7 +20,7 @@ function VideoCall() {
   const [callAccepted, setCallAccepted] = useState(false);
   const [idToCall, setIdToCall] = useState("");
   const [callEnded, setCallEnded] = useState(false);
-  const [name, setName] = useState("");
+  const [name, setName] = useState(""); // Holds the full name from localStorage
   const [copied, setCopied] = useState(false); // State to manage copy feedback
   const myVideo = useRef();
   const userVideo = useRef();
@@ -41,6 +41,12 @@ function VideoCall() {
   };
 
   useEffect(() => {
+    // Fetch the fullname from localStorage
+    const fullname = localStorage.getItem("fullname");
+    if (fullname) {
+      setName(fullname);
+    }
+
     socket.on("me", (id) => {
       setMe(id);
       console.log("My ID:", id);
@@ -128,14 +134,9 @@ function VideoCall() {
           </div>
         </div>
         <div className="myId">
-          <TextField
-            id="filled-basic"
-            label="Name"
-            variant="filled"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            style={{ marginBottom: "20px" }}
-          />
+          <p style={{ marginBottom: "20px" }}>
+            <strong>Name: </strong> {name}
+          </p>
           <CopyToClipboard text={me} onCopy={handleCopy} style={{ marginBottom: "2rem" }}>
             <Button variant="contained" color="primary" startIcon={<AssignmentIcon fontSize="large" />}>
               Copy ID
