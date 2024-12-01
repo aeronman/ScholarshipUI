@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Button, IconButton, TextField } from "@material-ui/core";
-import { Assignment as AssignmentIcon, Phone as PhoneIcon } from "@material-ui/icons";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import TextField from "@material-ui/core/TextField";
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import PhoneIcon from "@material-ui/icons/Phone";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
-import "./AdminInterview.css";
+
 
 const socket = io.connect("https://ad7fc898-6610-40e2-9f32-532c0872946d-00-avwy8n55c57b.riker.replit.dev");
+
 
 function VideoCall() {
   const [me, setMe] = useState("");
@@ -23,25 +27,13 @@ function VideoCall() {
   const userVideo = useRef(null);
   const connectionRef = useRef(null);
 
-  // Start the media stream and set it up
-  const startStream = async () => {
-    try {
-      const currentStream = await navigator.mediaDevices.getUserMedia({
-        video: true,
-        audio: true,
-      });
-      setStream(currentStream);
-      myVideo.current.srcObject = currentStream;
-    } catch (error) {
-      console.error("Error accessing media devices:", error);
-    }
-  };
-
-  // Handle socket events for user connection and incoming calls
   useEffect(() => {
+    
+   
+    // Listen for socket events
     socket.on("me", (id) => {
       setMe(id);
-      console.log("My socket ID:", id);
+      console.log("MY ID", id);
     });
 
     socket.on("callUser", (data) => {
@@ -61,9 +53,21 @@ function VideoCall() {
         stream.getTracks().forEach((track) => track.stop());
       }
     };
-  }, [stream]);
+  }, []);
 
-  // Function to call another user
+    // Start media stream
+    const startStream = async () => {
+        try {
+          const currentStream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: true,
+          });
+          setStream(currentStream);
+          myVideo.current.srcObject = currentStream;
+        } catch (error) {
+          console.error("Error accessing media devices:", error);
+        }
+      };
   const callUser = (id) => {
     const peer = new Peer({
       initiator: true,
@@ -80,10 +84,10 @@ function VideoCall() {
       });
     });
 
-    peer.on("stream", (incomingStream) => {
-      console.log("Received stream:", incomingStream);
+    peer.on("stream", (stream) => {
+      console.log("Peer stream received:", stream);
       if (userVideo.current) {
-        userVideo.current.srcObject = incomingStream;
+        userVideo.current.srcObject = stream;
       }
     });
 
@@ -99,7 +103,6 @@ function VideoCall() {
     connectionRef.current = peer;
   };
 
-  // Function to answer an incoming call
   const answerCall = () => {
     setCallAccepted(true);
 
@@ -113,10 +116,10 @@ function VideoCall() {
       socket.emit("answerCall", { signal: data, to: caller });
     });
 
-    peer.on("stream", (incomingStream) => {
-      console.log("Received stream:", incomingStream);
+    peer.on("stream", (stream) => {
+      console.log("Peer stream received on answer:", stream);
       if (userVideo.current) {
-        userVideo.current.srcObject = incomingStream;
+        userVideo.current.srcObject = stream;
       }
     });
 
@@ -128,29 +131,21 @@ function VideoCall() {
     connectionRef.current = peer;
   };
 
-  // Function to leave the call
   const leaveCall = () => {
     setCallEnded(true);
     if (connectionRef.current) {
       connectionRef.current.destroy();
     }
-    if (userVideo.current) {
-      userVideo.current.srcObject = null;
-    }
-    window.location.reload();
-  };
-
-  // Callback for copy to clipboard
-  const handleCopy = () => {
-    alert("ID copied to clipboard!");
+    window.location.reload(); // Optional: Reset the state after ending the call
   };
 
   return (
     <>
-      <h1 style={{ textAlign: "center", color: "black" }}>Interview</h1>
+      <h1 style={{ textAlign: "center", color: "black" }}>Tanginang Interview Yan</h1>
       <button onClick={startStream}>Start Video</button>
       <div className="container">
         <div className="video-container">
+    
           <div className="video">
             {stream && (
               <video
@@ -174,6 +169,7 @@ function VideoCall() {
           </div>
         </div>
         <div className="myId">
+       
           <TextField
             id="filled-basic"
             label="Name"
@@ -182,7 +178,7 @@ function VideoCall() {
             onChange={(e) => setName(e.target.value)}
             style={{ marginBottom: "20px" }}
           />
-          <CopyToClipboard text={me} onCopy={handleCopy} style={{ marginBottom: "2rem" }}>
+          <CopyToClipboard text={me} style={{ marginBottom: "2rem" }}>
             <Button
               variant="contained"
               color="primary"
