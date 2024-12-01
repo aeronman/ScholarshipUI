@@ -1,6 +1,5 @@
 .parentDiv{
     overflow-y: auto; /* Enable vertical scrolling */
-    max-height: calc(100vh - 600px); /* Subtract header height to fit the viewport */
     box-sizing: border-box; /* Ensure padding doesn't affect total dimensions */
 }
 /*HEADER*/
