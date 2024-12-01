@@ -7,6 +7,7 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
+import "./AdminInterview.css";
 
 const socket = io.connect("https://ad7fc898-6610-40e2-9f32-532c0872946d-00-avwy8n55c57b.riker.replit.dev");
 
@@ -54,11 +55,9 @@ function VideoCall() {
     });
 
     return () => {
-      // Cleanup listeners on unmount
       socket.off("me");
       socket.off("callUser");
 
-      // Stop media stream on component unmount
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
@@ -86,10 +85,6 @@ function VideoCall() {
       if (userVideo.current) {
         userVideo.current.srcObject = stream;
       }
-    });
-
-    peer.on("error", (err) => {
-      console.error("Peer error:", err);
     });
 
     socket.on("callAccepted", (signal) => {
@@ -120,10 +115,6 @@ function VideoCall() {
       }
     });
 
-    peer.on("error", (err) => {
-      console.error("Peer error:", err);
-    });
-
     peer.signal(callerSignal);
     connectionRef.current = peer;
   };
@@ -144,8 +135,7 @@ function VideoCall() {
 
   return (
     <>
-      <h1 style={{ textAlign: "center", color: "black" }}>Interview</h1>
-      <button onClick={startStream}>Start Video</button>
+      <h1 style={{ textAlign: "center", color: "#B22F2F" }}>Admin Interview</h1>
       <div className="container">
         <div className="video-container">
           <div className="video">
@@ -155,50 +145,50 @@ function VideoCall() {
                 muted
                 ref={myVideo}
                 autoPlay
-                style={{ width: "300px" }}
+                className="video-stream"
               />
             )}
           </div>
           <div className="video">
-            {callAccepted && !callEnded ? (
+            {callAccepted && !callEnded && (
               <video
                 playsInline
                 ref={userVideo}
                 autoPlay
-                style={{ width: "300px" }}
+                className="video-stream"
               />
-            ) : null}
+            )}
           </div>
         </div>
         <div className="myId">
           <TextField
-            id="filled-basic"
             label="Name"
             variant="filled"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            style={{ marginBottom: "20px" }}
+            className="input-field"
           />
           <CopyToClipboard text={me} onCopy={handleCopy} style={{ marginBottom: "2rem" }}>
             <Button
               variant="contained"
               color="primary"
               startIcon={<AssignmentIcon fontSize="large" />}
+              className="copy-id-button"
             >
               Copy ID
             </Button>
           </CopyToClipboard>
 
           <TextField
-            id="filled-basic"
             label="ID to call"
             variant="filled"
             value={idToCall}
             onChange={(e) => setIdToCall(e.target.value)}
+            className="input-field"
           />
           <div className="call-button">
             {callAccepted && !callEnded ? (
-              <Button variant="contained" color="secondary" onClick={leaveCall}>
+              <Button variant="contained" color="secondary" onClick={leaveCall} className="end-call-button">
                 End Call
               </Button>
             ) : (
@@ -206,6 +196,7 @@ function VideoCall() {
                 color="primary"
                 aria-label="call"
                 onClick={() => callUser(idToCall)}
+                className="call-icon-button"
               >
                 <PhoneIcon fontSize="large" />
               </IconButton>
@@ -213,15 +204,21 @@ function VideoCall() {
           </div>
         </div>
         <div>
-          {receivingCall && !callAccepted ? (
+          {receivingCall && !callAccepted && (
             <div className="caller">
               <h1>{name} is calling...</h1>
-              <Button variant="contained" color="primary" onClick={answerCall}>
+              <Button variant="contained" color="primary" onClick={answerCall} className="answer-button">
                 Answer
               </Button>
             </div>
-          ) : null}
+          )}
         </div>
+      </div>
+      {/* Added wrapper for Start Video button */}
+      <div className="start-button-container">
+        <button className="start-button" onClick={startStream}>
+          Start Video
+        </button>
       </div>
     </>
   );

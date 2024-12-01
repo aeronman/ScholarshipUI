@@ -21,7 +21,6 @@ import RegInterview from "./pages/Registered/Interview/RegisteredInterview";
 // Admin Pages
 import AdminDashboard from "./pages/Admin/Dashboard/AdminDashboard";
 import AdminApplication from "./pages/Admin/Application/AdminApplication";
-import AdminFAQs from "./pages/Admin/FAQ's/AdminFAQs";
 import AdminFeedbacks from "./pages/Admin/Feedback/AdminFeedbacks";
 import AdminInterview from "./pages/Admin/Interview/AdminInterview";
 import AdminScholars from "./pages/Admin/Scholars/AdminScholars";
@@ -152,7 +151,7 @@ export default function App() {
         {/* Registered User Routes */}
         <Route element={<PageWithChatbot />}>
           <Route
-            path="/regDashboard"
+            path="/regdashboard"
             element={<ProtectedRoute element={<RegHome />} allowedUserTypes={["Student"]} />}
           />
           <Route
