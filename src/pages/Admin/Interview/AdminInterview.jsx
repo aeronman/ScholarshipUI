@@ -9,9 +9,7 @@ import Peer from "simple-peer";
 import io from "socket.io-client";
 
 
-const socket = io.connect("https://ad7fc898-6610-40e2-9f32-532c0872946d-00-avwy8n55c57b.riker.replit.dev:5000", {
-  transports: ["websocket"],
-});
+const socket = io.connect("https://ad7fc898-6610-40e2-9f32-532c0872946d-00-avwy8n55c57b.riker.replit.dev:5000");
 
 function VideoCall() {
   const [me, setMe] = useState("");
