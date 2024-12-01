@@ -7,6 +7,7 @@ import RegTotalApplicants from "./components/RegTotalApplicants/RegTotalApplican
 import RegMission from "./components/RegMission/RegMission"
 import RegLineChart from "./RegLineChart/RegLineChart"
 import VideoCallButton from "./components/VideoCallButton/VideoCallButton"
+import ChatbotButton from "../../../components/PageWithChatbot";
 
 import "./RegHome.css"
 import "../common/allReg.css"
@@ -38,6 +39,7 @@ export default function RegHome() {
                     <RegLineChart />
                 </div>
                 <VideoCallButton />
+                <ChatbotButton />
             </div>
         </div>
     )
