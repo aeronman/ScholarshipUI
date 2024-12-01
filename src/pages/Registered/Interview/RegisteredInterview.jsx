@@ -7,7 +7,7 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
-import './AdminInterview.css';
+
 
 
 const socket = io.connect("http://localhost:5000");
