@@ -17,6 +17,7 @@ const UserProfile = () => {
           const data = await response.json();
           if (!data.error) {
             setUserData(data);
+            setAvatar(data.profile_picture);
           } else {
             console.error(data.error);
           }
