@@ -1,0 +1,67 @@
+/* outer div */
+.FAQsDiv1 {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+/* dashboard div */
+.FAQsDiv1-1 {
+    height: 100vh;
+    width: 15%;
+    background-color: white;
+}
+
+/* profile, FAQsContent, and contact */
+.FAQsDiv1-2 {
+    width: 85%;
+}
+
+/* profile div */
+.FAQsDiv1-2-1 {
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FAQsTitle div */
+.FAQsTitle {
+    color: #B22F2F;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+/* FAQsContent div */
+.FAQsDiv1-2-2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: .5%;
+    height: 70%;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    padding: 1% 3%;
+}
+
+/* Contact div */
+.FAQsDiv1-2-3 {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FAQsDiv1-2-3 h2,
+.FAQsDiv1-2-3 p {
+    margin: 10px;
+    padding: 0;
+}
+
+.FAQsDiv1-2-3 p {
+    margin-top: 5px;
+}
+

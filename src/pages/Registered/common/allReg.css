@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #FED5D5, #FFFFFF);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}

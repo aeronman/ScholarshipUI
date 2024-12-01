@@ -1,0 +1,329 @@
+.regProfile1 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .regProfile1-1 {
+    height: 100vh;
+    width: 15%;
+    background-color: white;
+  }
+  
+  .regProfile1-2 {
+    width: 85%;
+  }
+  
+  /* Profile Section */
+  .regProfile1-2-1 {
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Profile Container */
+  .profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Slightly larger gap */
+    margin: 15px 10px; /* Adjusted margins */
+    padding: 15px; /* Consistent padding */
+    height: 80%;
+    border-radius: 10px;
+    background-color: transparent;
+    margin-top: -17px;
+    
+  }
+  
+  /* Profile Card Styles */
+  .profile-card {
+    flex: 1;
+    width: 450px; /* Smaller width */
+    height: 57%;
+    text-align: center;
+    padding: 15px; /* Reduced padding */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px;
+    background-color: #fff;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Evenly spaces content */
+    border: 1px solid #000000;
+  }
+  
+  /* Avatar */
+  .profile-avatar {
+    width: 90px;  /* Smaller avatar size */
+    height: 90px; /* Consistent height */
+    border-radius: 50%;
+    margin-bottom: 15px; /* Adjust margin */
+  }
+  
+  /* Profile Text */
+  .profile-id {
+    font-size: 18px; /* Reduced font size */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  .profile-name {
+    font-size: 22px; /* Reduced font size */
+    color: #7D0A0A;
+  }
+  
+  .profile-admin {
+    font-size: 18px; /* Slightly smaller font */
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Details Container */
+  .details-container {
+  flex: 2;
+  }
+  
+  /* Personal Information Section */
+  .personal-info-admin {
+    margin-bottom: 10px; /* Reduced bottom margin */
+    padding: 12px; /* Reduced padding */
+    height: 57%;
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #000000;
+  }
+  
+  
+  
+  /* Section Titles */
+  .personal-info-admin h3 {
+    margin-bottom: 8px; /* Reduced margin */
+    color: #7D0A0A;
+    font-size: 16px; /* Slightly smaller title font */
+  }
+  
+  .personal-info-admin ul {
+  list-style: none;
+  padding: 0;
+  }
+  
+  /* List Items */
+  .personal-info-admin li {
+    margin-bottom: 8px; /* Reduced margin */
+    font-size: 14px; /* Smaller font size */
+  }
+  
+  .personal-info-admin li span {
+  font-weight: bold;
+  color: #333;
+  }
+  
+  /* Activity Log Section */
+  .activity-log {
+    margin-bottom: 20px;
+    padding: 15px;
+    height: 45%;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #000000;
+  }
+  
+  .activity-log h3 {
+    margin-bottom: 10px;
+    color: #7D0A0A;
+    font-size: 16px; /* Reduced font size */
+  }
+  
+  .log-date {
+    display: block;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .log-activity {
+    display: block;
+    color: #555;
+    margin-left: 15px;
+    font-size: 16px;
+  }
+  
+  .log-date, .log-activity {
+    font-size: 14px; /* Reduced font size for log entries */
+  }
+  
+  
+  /* Current School Section */
+  .details-admin {
+    margin-top: 9px;
+    padding: 12px; /* Reduced padding */
+    width: 100%;
+    height: 45%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    background-color: #fff;
+    flex-grow: 1; /* Makes the section grow to take available space */
+  }
+  
+  .details-admin ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  }
+  
+  .details-admin li {
+    font-size: 14px; /* Reduced font size */
+  }
+  /* Add Divider Lines Between Data */
+  .divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+  }
+  
+  /* General Styling for Detail Items */
+  .detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures vertical alignment */
+  padding: 5px 0; /* Adds spacing between items */
+  font-size: 16px;
+  }
+  
+  .detail-label {
+  flex: 1; /* Allows the label to occupy equal space */
+  text-align: left; /* Aligns text to the left */
+  font-weight: bold;
+  color: #333;
+  }
+  
+  .detail-value {
+  flex: 1; /* Allows the value to occupy equal space */
+  text-align: center; /* Aligns text to the right */
+  color: #555;
+  
+  }
+  
+  /* Divider Line Styling */
+  .divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+  }
+  
+  /* Avatar Container */
+  .avatar-container {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center avatar horizontally */
+    align-items: center;     /* Center avatar vertically */
+    width: 100%;             /* Take full width of parent container */
+    height: 100%;            /* Take full height of parent container */
+    margin-bottom: 20px;     /* Add some space below the avatar */
+  }
+  
+  /* Avatar */
+  .profile-avatar {
+    width: 190px;             /* Increased size for the avatar */
+    height: 190px;            /* Increased size for the avatar */
+    border-radius: 50%;       /* Make it circular */
+    object-fit: cover;        /* Ensure the image fits within the circle */
+    display: block;           /* Remove extra space under the image */
+    border: 7px solid #555; /* Red border for better visibility */
+  }
+  
+  /* Edit Button */
+  .edit-avatar-button {
+    position: absolute;
+    bottom: 20px;              /* Positioning the button at the bottom-right of the avatar */
+    right: 130px;               /* Positioning the button at the bottom-right of the avatar */
+    width: 40px;              /* Adjust size for the edit button */
+    height: 40px;             /* Adjust size for the edit button */
+    background-color: #7D0A0A; /* Button color */
+    border: none;
+    border-radius: 50%;       /* Make it circular */
+    color: white;
+    font-size: 30px;          /* Icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-avatar-button:hover {
+    background-color: #fffdfd;   /* Darken button color on hover */
+  }
+  
+  .pencil-icon {
+    font-size: 20px;          /* Adjust the pencil icon size */
+  }
+  
+  .edit-button {
+    background-color: #7D0A0A;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .edit-button:hover {
+    background-color: #555;
+  }
+  
+  input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    width: calc(100% - 100px); /* Full width minus padding */
+    margin-bottom: -10px;
+    
+  }
+  
+  /* Name Section */
+  .name-container {
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  /* Edit Name Button */
+  .edit-name-button {
+    position: absolute;
+    top: -240px;
+    left: -5px;
+    background-color: #7D0A0A;
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-name-button:hover {
+    background-color: #555;
+  }
+  
+  /* Edit Name Input */
+  .edit-name-input {
+    font-size: 24px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+  }
+  
+  
+  

@@ -1,0 +1,149 @@
+/* General Layout */
+.AdminStatus1 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .AdminStatus1-1 {
+    height: 100vh;
+    width: 15%;
+  }
+  
+  .AdminStatus1-2 {
+    width: 85%;
+  }
+  
+  /* Profile Section */
+  .AdminStatus1-2-1 {
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Main Content Section */
+  .AdminStatus1-2-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5% auto;
+    height: 70%;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 1% 3%;
+  }
+  
+  /* Title Section */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .table-header h2 {
+    font-size: 2rem; /* Increased size */
+    text-align: left;
+    font-weight: bold;
+    margin: 0;
+    color: #B22F2F; /* Adjust the color to match your theme */
+  }
+  
+  /* Actions Section (Search Bar + Add Admin Button) */
+  .actions-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns both button and search bar to the right */
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  /* Search Bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* Space between search bar and button */
+  }
+  
+  .search-bar {
+    padding: 8px 30px 8px 30px; /* Add extra padding for space for the icon */
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    width: 250px;
+    position: relative;
+  }
+  
+  /* Icon inside the Search Bar */
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #888;
+    font-size: 1.2rem; /* Adjust icon size */
+  }
+  
+  /* Add Admin Button Styling */
+  .add-admin-btn {
+    padding: 8px 20px;
+    background-color: #B22F2F; /* Darker shade for the default background */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem; /* Slightly larger font */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures both icon and text are centered */
+  }
+  
+  .add-icon {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.2rem; /* Adjust icon size to match search icon */
+  }
+  
+  /* Hover state with the lighter background */
+  .add-admin-btn:hover {
+    background-color: #f8bbd0; /* Lighter shade for the hover state */
+  }
+  
+  /* Table Styling */
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .admin-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .admin-table tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Divider Line Style */
+.divider-line {
+    border: none;
+    height: 1px;
+    background-color: #ddd; /* Light grey color */
+    margin: 20px 0; /* Adds spacing before and after the line */
+    width: 100%; /* Makes sure it spans the full width */
+  }
+
+  
+  
+  

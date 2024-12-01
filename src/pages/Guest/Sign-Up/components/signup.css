@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+}
+
+.popUpSuperDiv {
+    position: relative;
+    display: flex;
+    height: 1080px;
+    align-items: center;
+    justify-content: center;
+    /* Ensure the headerDiv is the reference for absolute positioning within it */
+    background-image: url(https://res.cloudinary.com/ddiyjqv0u/image/upload/v1719741298/173963738_1113147162525626_3755736095064468466_n_1_epcbrr.png);
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    overflow: hidden;
+    /* Ensure the pseudo-element is contained within the div */
+    background-size: cover;
+    background-position: center;
+}
+
+.popUpSuperDiv::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the color and opacity as needed */
+    z-index: 1;
+    /* Ensure the overlay is on top of the background image */
+    pointer-events: none;
+    /* Prevent the overlay from capturing any mouse events */
+}
+
+.popUpSuperDiv>* {
+    position: relative;
+    z-index: 2;
+    /* Ensure the content is on top of the overlay */
+}
+
+
+.popUpDiv {
+    border-radius: 15px;
+    height: 500px;
+    width: 800px;
+    position: absolute;
+    background: linear-gradient(to right,
+            rgba(125, 10, 10, .8),
+            /* Red with 80% transparency */
+            rgb(192, 192, 192)
+            /* White with 80% transparency */
+        );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    box-sizing: border-box;
+}
+
+.popUpDiv>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popUpDiv>form>div>.p1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.popUpDiv>form>div>.p2 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    color: white;
+}
+
+.popUpDiv>form>.formContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.popUpDiv>form>.formContent>.signup_usernameDiv label,
+.popUpDiv>form>.formContent>.signup_emailDiv label,
+.popUpDiv>form>.formContent>.signup_passDiv label {
+    color: white; 
+    font-size: 0.9rem;
+    font-weight: 400;
+
+}
+
+
+
+.popUpDiv>form>.formContent>.signup_usernameDiv {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.popUpDiv>form>.formContent>.signup_usernameDiv>input {
+    width: 515px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+
+.popUpDiv>form>.formContent>.signup_emailDiv {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.popUpDiv>form>.formContent>.signup_emailDiv>input {
+    width: 517px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.popUpDiv>form>.formContent>.signup_passDiv {
+    display: flex;
+    gap: 10%;
+}
+
+.popUpDiv>form>.formContent>.signup_passDiv>.d1-1 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.popUpDiv>form>.formContent>.signup_passDiv>.d1-1>input {
+    width: 230px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.popUpDiv>form>.formContent>.signup_passDiv>.d2 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.popUpDiv>form>.formContent>.signup_passDiv>.d2>input {
+    width: 230px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.popUpDiv>form>.formContent>.termsDiv {
+    display: flex;
+    text-align: center;
+    color: #404040;
+    font-size: 1rem;
+}
+
+.popUpDiv>form>.formContent>.termsDiv>input {
+    height: 18px;
+    width: 18px;
+}
+
+.popUpDiv>form>.formContent>.termsDiv>label>a {
+    text-decoration: none;
+    color: #880808;
+}
+
+.popUpDiv>form>.formContent>.submit {
+    align-self: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #880808;
+    color: white;
+    font-size: 1rem;
+}
+
+.popUpDiv>form>.signInP {
+    align-self: center;
+}
+
+.popUpDiv>form>.signInP>a {
+    text-decoration: none;
+    color: #880808;
+}

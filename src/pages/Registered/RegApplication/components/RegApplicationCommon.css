@@ -1,0 +1,191 @@
+.input-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 4%;
+    gap: 3vh;
+}
+
+.applicationLabel {
+    font-size: .9rem;
+    color: #6B6F72;
+}
+
+.input-container-1,
+.input-container-2,
+.input-container-3,
+.input-container-4,
+.input-container-5,
+.input-container-6 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Input Div*/
+.input-container-1-1,
+.input-container-1-2,
+.input-container-1-3,
+.input-container-1-4 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+/*Input-text format*/
+.input-container-1-1>input,
+.input-container-1-2>input,
+.input-container-1-3>input,
+.input-container-1-4>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-1-1>select,
+.input-container-1-2>select,
+.input-container-1-3>select,
+.input-container-1-4>select {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-2-1,
+.input-container-2-2,
+.input-container-2-3,
+.input-container-2-4 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+.input-container-2-1>input,
+.input-container-2-2>input,
+.input-container-2-3>input,
+.input-container-2-4>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-2-1>select,
+.input-container-2-2>select,
+.input-container-2-3>select,
+.input-container-2-4>select{
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-3-1,
+.input-container-3-2,
+.input-container-3-3,
+.input-container-3-4 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+.input-container-3-1>input,
+.input-container-3-2>input,
+.input-container-3-3>input,
+.input-container-3-4>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-3-1>select,
+.input-container-3-2>select,
+.input-container-3-3>select,
+.input-container-3-4>select {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-4 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-container-4-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5vh;
+}
+
+.input-container-4-1>input {
+    width: 100%;
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.radioDiv>input {
+    margin-left: 7%;
+}
+
+.input-container-5-1,
+.input-container-5-2,
+.input-container-5-3,
+.input-container-5-4 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+.input-container-5-1>input,
+.input-container-5-2>input,
+.input-container-5-3>input,
+.input-container-5-4>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-5-1>select,
+.input-container-5-2>select,
+.input-container-5-3>select,
+.input-container-5-4>select {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.file-preview {
+    display: flex;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+.file-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    margin-right: 1vh;
+}
+.save-button-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Add some spacing above the button */
+}
+
+.save-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+

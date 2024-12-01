@@ -1,0 +1,29 @@
+.ActionButtons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.action-button {
+    margin: 0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.update-button {
+    background: #bbdefb;
+    color: #1565c0;
+}
+
+
+.export-button {
+    background: #c8e6c9;
+    color: #2e7d32;
+}
+
+.action-button:hover {
+    opacity: 0.9;
+}

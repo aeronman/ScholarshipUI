@@ -1,0 +1,177 @@
+.scholarship-programs-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the background image */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    padding: 50px 0; /* Adds padding around the container */
+    border-radius: 8px; /* Optional: rounds the corners of the container */
+}
+
+/* Add a gray background with 50% opacity */
+.scholarship-programs-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 0; /* Ensures it stays behind the cards and navigation buttons */
+}
+
+.scholarship-slider {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Centering and Adjusting Card Layout */
+.scholarship-card { 
+    background: linear-gradient(to bottom, #FED5D5, #FFFFFF);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    max-width: 320px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 530px; /* Ensures the card height remains consistent */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.scholarship-card .scholarship-title {
+    margin: 10px 0;
+    background-color: #B22F2F;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px; /* Adjusted font size */
+}
+
+.scholarship-card p {
+    font-size: 11px; /* Adjusted font size for better readability */
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-align: center;
+    overflow: hidden; /* Prevent text overflow */
+}
+
+.apply-button {
+    background-color: #B22F2F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 15px; /* Slightly larger padding */
+    font-size: 14px; /* Adjusted font size */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: auto; /* Ensures the button is always at the bottom */
+}
+
+.apply-button:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Apply scaling effect to the center card */
+.slick-center .scholarship-card {
+    transform: scale(1.1); /* Enlarges the center card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds shadow to the center card */
+}
+
+/* Arrow styling remains the same as before */
+.custom-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #c9302c;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slick-prev, .slick-next {
+    border-radius: 130px !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    position: absolute !important;
+    top: 50% !important;
+    display: block !important;
+    width: 40px !important;  /* Increase width */
+    height: 40px !important;  /* Increase height */
+    padding: 0 !important;
+    transform: translate(0, -50%) !important;
+    cursor: pointer !important;
+    color: white !important;
+    background: #B22F2F !important;  /* Set your background color */
+    border: none !important;  /* Ensure no border */
+}
+
+
+.custom-arrow span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.custom-arrow:hover {
+    background-color: #a02020;
+    transform: scale(1.1);
+}
+
+.custom-prev {
+    left: -50px;
+}
+
+.custom-next {
+    right: -50px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .custom-arrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .custom-arrow span {
+        font-size: 20px;
+    }
+
+    .custom-prev {
+        left: -30px;
+    }
+
+    .custom-next {
+        right: -30px;
+    }
+
+    /* Adjust the font size and padding for smaller screens */
+    .scholarship-card {
+        max-width: 280px; /* Smaller width for mobile */
+    }
+
+    .scholarship-card p {
+        font-size: 12px;
+    }
+
+    .apply-button {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+}

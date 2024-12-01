@@ -1,0 +1,44 @@
+.TableContainer {
+    min-height: 500px; /* Ensures the table has a minimum height */
+    max-height: 700px; /* Optional: to avoid excessively tall tables */
+    overflow-y: auto; /* Enables vertical scrolling when content exceeds height */
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background-color: white;
+}
+
+
+.ApplicantTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.ApplicantTable th,
+.ApplicantTable td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ApplicantTable th {
+    background-color: #fce8e8;
+    color: #b72a37;
+    font-weight: bold;
+}
+
+.ApplicantTable td {
+    color: #333;
+}
+
+.ViewMore {
+    background-color: #b72a37;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ViewMore:hover {
+    background-color: #9e252e;
+}

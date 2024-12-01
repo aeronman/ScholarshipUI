@@ -1,0 +1,143 @@
+/* Outer div for RegApplication6 */
+.RegApplicationDiv1 {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Dashboard div */
+.RegApplicationDiv1-1 {
+    height: 100vh;
+    width: 370px;
+    background-color: white;
+}
+
+/* Profile, Feedbacks div */
+.RegApplicationDiv1-2 {
+    width: 200vh;
+}
+
+/* Form section div */
+.RegApplicationDiv1-2-2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: .5%;
+    height: 70vh;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    padding: 1% 3%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Titles div */
+.formheader {
+    color: #B22F2F;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+/* Title Details div */
+.formheaderDetails {
+    color: #6B6F72;
+    font-size: .8rem;
+    margin-left: 5%;
+}
+
+/* Progressbar div */
+.formprogressBar {
+    height: 20px;
+    width: 500px;
+    border-radius: 15px;
+    background-color: #B22F2F;
+    align-self: center;
+}
+
+/* Review Section container in RegApplication6 */
+.review-sections-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%; 
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Review Section */
+.review-section {
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Increase font size of SCHOLARSHIP PROGRAM */
+.review-section h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Label and Data Field styles */
+.review-section .data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review-section .data-grid div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-section .data-grid div label {
+    font-weight: medium;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.review-section .data-grid div p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+/* Documents Section */
+.review-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-section ul li {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Hide Scrollbars for Webkit Browsers */
+.review-sections-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.review-sections-container::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Hide Scrollbars for IE, Edge */
+.review-sections-container {
+    -ms-overflow-style: none;
+}

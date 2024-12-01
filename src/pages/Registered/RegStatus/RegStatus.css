@@ -1,0 +1,30 @@
+.RegStatusDiv1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.RegStatusDiv1-1 {
+    height: 100vh;
+    width: 15%;
+    background-color: white;
+}
+
+.RegStatusDiv1-2 {
+    width: 100%;
+}
+
+.RegApplicationDiv1-2 {
+    width: 75%;
+}
+
+.RegStatusDiv1-2-1 {
+    height: 20%;
+}
+
+.RegStatusDiv1-2-2 {
+    height: 20%;
+}
+
+.RegStatusDiv1-2-3 {
+    height: 60%;
+}

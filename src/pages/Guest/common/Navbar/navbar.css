@@ -1,0 +1,63 @@
+/* NAVBAR */
+nav {
+    width: 100%;
+    padding: 10px;
+    padding-right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+img {
+    margin-left: 6%;
+    width: 70px;
+}
+
+.navADiv {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navADiv > span {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* Style for Login and Sign-up links as buttons */
+.navButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84px;
+    height: 29px;
+    font-size: 14px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: white;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loginBtn {
+    border: none;
+    background-color: #7D0A0A;
+    color: white;
+}
+
+.signupBtn {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+/* Optional: Add hover effect for better user experience */
+.navButton:hover {
+    opacity: 0.8;
+}

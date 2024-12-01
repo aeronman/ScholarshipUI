@@ -1,0 +1,13 @@
+.FilterButton {
+  padding: 10px 15px;
+  background: #fce4ec;
+  color: #d81b60;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.FilterButton:hover {
+  background-color: #e67e22;
+}

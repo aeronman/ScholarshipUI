@@ -1,0 +1,443 @@
+/* =================== GENERAL LAYOUT =================== */
+/* Outer container */
+.AdminFeedbackDiv1 {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.AdminFeedbackDiv1-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Main content */
+.AdminFeedbackDiv1-2 {
+  margin-left: 15%;
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 85%;
+}
+
+/* Profile section */
+.AdminFeedbackDiv1-2-1 {
+  width: 95%;
+  display: flex;
+  height: 15%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Feedback content container */
+.AdminFeedbackDiv1-2-2 {
+  display: flex;
+  flex-direction: column; 
+  margin-left: 5%;
+  margin-top: 1%;
+  height: 80%;
+  width: 85%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  padding: 1% 3%;
+}
+
+/* =================== HEADER AND MESSAGES =================== */
+/* Feedback title */
+.feedback-header {
+  font-size: 15px;
+  font-weight: bold;
+  color: #b22f2f;
+  margin-left: 0;
+}
+
+/* No reviews message */
+.no-reviews-message {
+  font-size: 16px;
+  color: #b22f2f;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Reviews Section */
+.reviews-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: -60px;
+  margin-top: -20px;
+}
+
+.reviews-section h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.reviews-section .review-count {
+  font-weight: normal;
+  color: #777;
+}
+
+/* =================== TABLE STYLING =================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-size: 16px;
+}
+
+td {
+  font-size: 14px;
+}
+
+.AdminFeedbackDiv1-2-2-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.AdminFeedbackDiv1-2-2-table th,
+.AdminFeedbackDiv1-2-2-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.AdminFeedbackDiv1-2-2-table th {
+  background-color: #f5f5f5;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.AdminFeedbackDiv1-2-2-table tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.AdminFeedbackDiv1-2-2-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* =================== STATUS CLASSES =================== */
+.AdminFeedbackDiv1-2-2-status {
+  font-size: 14px;
+}
+
+.responded {
+  color: #4caf50; /* Formal green */
+  font-weight: bold;
+}
+
+.not-responded {
+  color: #d32f2f; /* Formal red */
+  font-weight: bold;
+}
+
+/* =================== BUTTON STYLING INSIDE TABLE =================== */
+.AdminFeedbackDiv1-2-2-table .action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+}
+
+/* Respond button (inside table) - Red background */
+.AdminFeedbackDiv1-2-2-table .action-btn.respond {
+  background-color: #b22f2f; /* Red */
+}
+
+.AdminFeedbackDiv1-2-2-table .action-btn.respond:hover {
+  background-color: #9a2323; /* Darker red on hover */
+}
+
+/* View button (inside table) - Gray background */
+.AdminFeedbackDiv1-2-2-table .action-btn.view {
+  background-color: #555; /* Gray */
+}
+
+.AdminFeedbackDiv1-2-2-table .action-btn.view:hover {
+  background-color: #444; /* Darker gray on hover */
+}
+
+/* Disabled button style */
+.AdminFeedbackDiv1-2-2-table .action-btn:disabled {
+  background-color: #b0bec5; /* Disabled state */
+  color: #ffffff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =================== DROPDOWN STYLING =================== */
+/* Dropdown Container */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+
+/* Styled Dropdown Button */
+.filter-select {
+  appearance: none;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 30px 10px 12px;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  width: auto; /* Adjust width to fit content */
+  min-width: 150px; /* Ensure minimum width */
+  text-align: left;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Styled Arrow */
+.filter-select::after {
+  content: '\25BC'; /* Down arrow */
+  font-size: 16px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when dropdown is open */
+.filter-select.open::after {
+  transform: translateY(-50%) rotate(180deg); /* Up arrow */
+}
+
+/* Hover effect for the dropdown button */
+.filter-select:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* =================== DROPDOWN MENU =================== */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  z-index: 10;
+  opacity: 0; /* Hidden by default */
+  max-height: 0; /* Start with zero height */
+  overflow: hidden; /* Hide overflow for smooth transition */
+  transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth sliding and fading */
+}
+
+/* Show dropdown menu when open */
+.dropdown-menu.open {
+  opacity: 1;
+  max-height: 300px; /* Adjust based on the number of items */
+}
+
+/* Dropdown List Items */
+.dropdown-menu li {
+  padding: 10px;
+  font-size: 14px;
+  color: black;
+  list-style: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+/* =================== DROPDOWN BUTTON =================== */
+/* Rotate arrow when dropdown is open */
+.filter-select.open::after {
+  transform: translateY(-50%) rotate(180deg); /* Up arrow */
+}
+
+/* Pop-up overlay to darken the background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Pop-up modal styling */
+.popup {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative; /* This will allow the close button to align inside */
+}
+
+/* Close button (SVG) inside the popup */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the close button */
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+/* Styling the SVG close icon */
+.close-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #b22f2f;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: stroke 0.3s ease;
+}
+
+/* Change color of the close icon when hovered */
+.close-btn:hover .close-icon {
+  stroke: #9a2323; /* Red on hover */
+}
+
+/* Modal title styling */
+.popup h2 {
+  font-size: 30px; /* Smaller font size */
+  font-weight: bold; /* Retain bold styling */
+  color: #9a2323; /* Ensure readability */
+  margin-bottom: 15px; /* Optional: Adjust spacing below */
+}
+
+/* Textarea for responses */
+textarea {
+  width: 100%;
+  height: 120px; /* Adjust as needed */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none; /* Disable resizing */
+  overflow: hidden; /* Disable scroll */
+  font-size: 14px;
+  line-height: 1.5; /* Ensure good readability */
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a keyframe for the slide-down effect */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px); /* Start slightly above */
+    opacity: 0; /* Fully transparent */
+  }
+  to {
+    transform: translateY(0); /* Original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Apply the animation to the pop-up */
+.popup {
+  animation: slideDown 0.3s ease-out; /* Duration and easing */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateY(0); /* Reset transform to ensure proper placement */
+}
+
+.star-container {
+  position: relative;
+  width: 20px; /* Adjust size as needed */
+  height: 20px;
+  display: inline-block;
+}
+
+.star-outline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ddd; /* Star outline color */
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  ); /* Star shape */
+}
+
+.star-fill {
+  position: absolute;
+  height: 100%;
+  background: gold; /* Star fill color */
+  clip-path: inherit;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button.active-page {
+  background-color: #b22f2f;
+  color: white;
+  border: 1px solid #b22f2f;
+}

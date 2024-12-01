@@ -1,0 +1,31 @@
+.interview-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.applicant-info {
+    margin-bottom: 20px;
+}
+
+.interview-details {
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d95151;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.schedule-button:hover {
+    background-color: #bf4141;
+}

@@ -1,0 +1,73 @@
+.application-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 90px;
+    max-width: 91%;
+  }
+  
+  .status-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+  }
+  
+  .status-icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .status-info {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .status-label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .status-date {
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .status-step.completed .status-icon {
+    color: #4caf50;
+  }
+  
+  .status-step.current .status-icon {
+    color: #ff9800;
+  }
+  
+  .status-step.upcoming .status-icon {
+    color: #ccc;
+  }
+  .qr-code-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .qr-code-image {
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  
+  .download-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+  

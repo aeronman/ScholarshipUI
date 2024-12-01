@@ -1,0 +1,117 @@
+/* Entire page background */
+.feedback-page {
+    background-color: #ffe6e6; /* Light pink background */
+    padding: 25px;
+    min-height: 100vh;
+  }
+  
+  
+  /* Profile header styling */
+  
+  /* Feedback container */
+  .feedback-container {
+    max-width: 1280px;
+    margin: auto;
+    height: 700px;
+  
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #a50000;
+    font-size: 35px;
+    margin-bottom: 50px;
+  }
+  
+  /* Feedback questions and rating stars */
+  .feedback-question {
+    margin-bottom: 30px;
+  }
+  
+  .feedback-question label {
+    display: block;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .star-rating {
+    display: flex;
+    gap: 5px;
+  
+  }
+  
+  .star {
+    font-size: 40px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .star.selected {
+    color: #ffbf00;
+  }
+  
+  /* Textareas */
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: vertical;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    width: 200px;
+    margin-left: 500px;
+    padding: 12px;
+    font-size: 18px;
+  
+    color: #fff;
+    background-color: #a50000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #800000;
+    
+  }
+  
+  .FeedbacksDiv1 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  .RegApplicationDiv1-2 {
+    width: 85%; /* Main content width */
+  }
+  
+  .feedback-container {
+    padding: 20px;
+  }
+  
+  .FeedbacksDiv1-1 {
+    height: 100vh;
+    width: 15%;
+    background-color: white;
+  }
+  
+  .feedback-header {
+      font-size: 24px;
+      color: #a00000; /* Adjust color as needed */
+      margin-bottom: 20px;
+      margin-left: 80px;
+      font-weight: bold;
+  }

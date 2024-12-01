@@ -1,0 +1,102 @@
+/* Main Wrapper */
+.SuperAdminApplicationDiv1 {
+    display: flex; /* Side-by-side layout for sidebar and main content */
+    height: 100vh; /* Ensure it spans the full viewport height */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Sidebar Section */
+.SuperAdminApplicationDiv1-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    width: 15%;
+}
+
+/* Main Content Section */
+.SuperAdminApplicationDiv1-2 {
+    margin-left: 15%;
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 85%;
+}
+
+/* Profile Section */
+.SuperAdminApplicationDiv1-2-1 {
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Application Content */
+.SuperAdminApplicationDiv1-2-2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: .5%;
+    height: 80%;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    padding: 1% 3%;
+    overflow-y: hidden;
+}
+
+/* Content Container */
+.SuperAdminApplicationContainer {
+    max-width: 1200px; /* Centered container width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished look */
+}
+
+/* Header Styling */
+.SuperAdminApplicationHeader {
+    display: flex;
+    justify-content: space-between;
+    color: #b72a37;
+    align-items: center;
+    margin-bottom: 20px; /* Add spacing */
+    border-bottom: 1px solid #e0e0e0; /* Optional divider line */
+    padding-bottom: 10px;
+}
+
+.SuperAdminApplicationActions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adds spacing between elements */
+    margin-bottom: 20px; /* Adds spacing below */
+}
+
+/* Ensure buttons and inputs align correctly */
+.SuperAdminApplicationActions > * {
+    flex-shrink: 0; /* Prevent shrinking of elements */
+}
+
+/* Applicant Table Section */
+.SuperAdminApplicationTableContainer {
+    min-height: 500px;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 20px; /* Adds spacing above the table */
+}
+
+/* Pagination Section */
+.SuperAdminApplicationPagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

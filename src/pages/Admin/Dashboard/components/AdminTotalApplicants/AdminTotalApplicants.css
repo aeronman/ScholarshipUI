@@ -1,0 +1,38 @@
+/*REUSABLES*/
+.redText {
+    color: #B63A3A;
+}
+
+/*REUSABLES*/
+
+.totalApplicantsDiv {
+    height: 90%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.totalApplicantsDiv>p {
+    margin: 0;
+}
+
+.totalApplicantsDiv>.p1 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.totalApplicantsDiv>.p2 {
+    font-size: 5.5rem;
+    font-weight: 500;
+}
+
+.totalApplicantsDiv>.p3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}

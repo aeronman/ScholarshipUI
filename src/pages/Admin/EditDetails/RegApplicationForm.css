@@ -1,0 +1,110 @@
+/* outer div */
+.RegApplicationDiv1 {
+    display: flex;
+    flex-direction: row;
+}
+
+/* dashboard div */
+.RegApplicationDiv1-1 {
+    height: 100%;
+    width: 15%;
+    background-color: white;
+}
+
+/* profile, Feedbacks*/
+.RegApplicationDiv1-2 {
+    width: 85%;
+}
+
+/* profile div */
+.RegApplicationDiv1-2-1 {
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Feedbacks div */
+.RegApplicationDiv1-2-2 {
+    height: 73%;
+}
+
+
+/* Form div */
+.RegApplicationDiv1-2-2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: .5%;
+    height: 70%;
+    width: 90%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    padding: 1% 3%;
+}
+
+/* Titles div */
+.formheader {
+    color: #B22F2F;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+/* Title Details div */
+.formheaderDetails {
+    color: #6B6F72;
+    font-size: .8rem;
+    margin-left: 5%;
+}
+
+/* Footer div where the buttons are located */
+.footerButton {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5% 10%;
+    margin-top: 10;
+}
+
+
+/* Prev and Next buttons */
+.footerButton button {
+    background-color: #B22F2F; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 12px 24px; /* Padding inside the button */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Button hover effect */
+.footerButton button:hover {
+    background-color: #9c1c1c; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Disabled button style */
+.footerButton button:disabled {
+    background-color: #e6e6e6; /* Lighter background for disabled button */
+    cursor: not-allowed; /* Change cursor to indicate disabled */
+}
+
+/* Previous button (Left alignment) */
+.footerButton button:first-child {
+    background-color: #b22f2f; /* Same color as next button */
+}
+
+/* Next button (Right alignment) */
+.footerButton button:last-child {
+    background-color: #B22F2F; /* Same color as prev button */
+}
+
+
+
+
+/* Prev Next Btns div */
+/* .RegApplicationDiv1-2-3 {} */

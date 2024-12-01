@@ -1,0 +1,147 @@
+/* Admin Sidebar Styles */
+.AdminsidebarDiv {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 5px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+.AdminLogoNameDiv {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    font-size: 0.7rem;
+    padding: 20% 10%;
+    color: #7D0A0A;
+}
+
+.AdminListDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5vh;
+}
+
+.AdminListDiv > span {
+    display: flex;
+    padding-left: 5vh;
+    border-radius: 12px;
+    height: 5vh;
+    width: 24vh;
+    align-items: center;
+    gap: 5%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Icon Color */
+.AdminListDiv > span > svg {
+    color: #B22F2F; /* Icon default color */
+    transition: color 0.3s;
+}
+
+/* Text Color */
+.AdminListDiv > span a {
+    color: black; /* Text color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Hover Effects */
+.AdminListDiv > span:hover {
+    background-color: #B22F2F; /* Highlight color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.AdminListDiv > span:hover > svg {
+    color: white; /* Icon color on hover */
+}
+
+.AdminListDiv > span:hover a {
+    color: white; /* Text color on hover */
+}
+
+.AdminListDiv2 {
+    margin-top: auto;  /* Push this section to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0vh;
+    padding-bottom: 20px;  /* Adjust space at the bottom if needed */
+}
+
+.AdminListDiv2 > hr {
+    width: 25vh;
+}
+
+.AdminListDiv2 > span {
+    display: flex;
+    padding-left: 5vh;
+    border-radius: 12px;
+    height: 5vh;
+    width: 24vh;
+    align-items: center;
+    gap: 5%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Icon Color for AdminListDiv2 */
+.AdminListDiv2 > span > svg {
+    color: #B22F2F; /* Icon default color */
+    transition: color 0.3s;
+}
+
+/* Text Color for AdminListDiv2 */
+.AdminListDiv2 > span a {
+    color: black; /* Text color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Hover Effects for AdminListDiv2 */
+.AdminListDiv2 > span:hover {
+    background-color: #B22F2F; /* Highlight color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.AdminListDiv2 > span:hover > svg {
+    color: white; /* Icon color on hover */
+}
+
+.AdminListDiv2 > span:hover a {
+    color: white; /* Text color on hover */
+}
+
+.AdminListDiv span.active {
+    background-color: #B22F2F; /* Background color for the active item */
+    color: white; /* Text color when active */
+}
+
+.AdminListDiv span.active a {
+    color: white; /* Change link color to white when active */
+}
+
+.AdminListDiv span.active svg {
+    fill: white; /* Change icon color to white when active */
+}
+
+.AdminListDiv2 span.active {
+    background-color: #B22F2F; /* Background color for the active item */
+    color: white; /* Text color when active */
+}
+
+.AdminListDiv2 span.active a {
+    color: white; /* Change link color to white when active */
+}
+
+.AdminListDiv2 span.active svg {
+    fill: white; /* Change icon color to white when active */
+}
+
+.removeDeco {
+    text-decoration: none;
+}
+
+.black {
+    color: black;
+}

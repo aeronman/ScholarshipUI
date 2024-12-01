@@ -1,0 +1,82 @@
+/* Outer div */
+.RegHomeDiv1 {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Sidebar div - Make it fixed */
+.RegHomeDiv1-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 15%;
+    background-color: white;
+    z-index: 10; /* To make sure it stays on top */
+}
+
+/* Profile, updates, and chart div */
+.RegHomeDiv1-2 {
+    margin-left: 15%; /* To avoid content hiding behind the fixed sidebar */
+    width: 85%;
+    overflow-y: auto; /* Make content scrollable */
+    height: 100vh; /* Ensure it takes full height */
+}
+
+/* Profile div */
+.RegHomeDiv1-2-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%; 
+}
+
+/* Updates and mission div */
+.RegHomeDiv1-2-2 {
+    height: 60%;
+    display: flex;
+}
+
+/* Updates div */
+.RegHomeDiv1-2-2-1 {
+    width: 50%;
+}
+
+/* Total scholars div */
+.RegHomeDiv1-2-2-1-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46.5%; 
+}
+
+/* Total applicants div */
+.RegHomeDiv1-2-2-1-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46.5%;
+}
+
+/* Mission div */
+.RegHomeDiv1-2-2-2 {
+    height: 90%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust chart container div to fit well inside */
+.RegHomeDiv1-2-3 {
+    width: 90%;
+    height: 25%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    padding: -20px;
+    justify-content: center;
+    align-items: center;
+    margin: -25px 90px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}

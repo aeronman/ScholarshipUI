@@ -1,0 +1,22 @@
+/* REUSABLES */
+.removeDeco {
+  text-decoration: none;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.bcheck {
+  border: 1px solid black;
+}
+
+.red {
+  color: red;
+}
+
+/* REUSABLES */

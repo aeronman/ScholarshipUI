@@ -1,0 +1,52 @@
+/* =================== GENERAL LAYOUT =================== */
+/* Outer container */
+.AdminFeedbackDiv1 {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Sidebar */
+  .AdminFeedbackDiv1-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    background-color: white;
+  }
+  
+  /* Main content */
+  .AdminFeedbackDiv1-2 {
+    margin-left: 15%;
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 85%;
+  }
+  
+  /* Profile section */
+  .AdminFeedbackDiv1-2-1 {
+    width: 95%;
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Feedback content container */
+  .AdminFeedbackDiv1-2-2 {
+    display: flex;
+    flex-direction: column; 
+    margin-left: 5%;
+    margin-top: 1%;
+    height: 80%;
+    width: 85%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    padding: 1% 3%;
+  }
+

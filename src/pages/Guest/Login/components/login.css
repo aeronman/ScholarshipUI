@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+}
+
+.popUpSuperDiv {
+    display: flex;
+    height: 800px;
+    align-items: center;
+    justify-content: center;
+}
+
+.popUpDiv {
+    border-radius: 15px;
+    height: 500px;
+    width: 800px;
+    position: absolute;
+    background: linear-gradient(to right,
+            rgba(125, 10, 10, .8),
+            /* Red with 80% transparency */
+            rgb(192, 192, 192)
+            /* White with 80% transparency */
+        );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    box-sizing: border-box;
+}
+
+.popUpDiv>img {
+    margin-left: 1%;
+    width: 20%;
+}
+
+.popUpDiv>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popUpDiv>form>div>.p1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.popUpDiv>form>div>.p2 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    color: white;
+}
+
+.popUpDiv>form>.formContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.popUpDiv>form>.formContent>.fnlnDiv {
+    display: flex;
+    gap: 10%;
+}
+
+.popUpDiv>form>.formContent>.fnlnDiv>.d1 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.popUpDiv>form>.formContent>.fnlnDiv>.d1>input {
+    width: 230px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.popUpDiv>form>.formContent>.fnlnDiv>.d2 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.popUpDiv>form>.formContent>.fnlnDiv>.d2>input {
+    width: 230px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.popUpDiv>form>.formContent>.login_emailDiv {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.popUpDiv>form>.formContent>.login_emailDiv>input {
+    width: 517px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.login_emailDiv > input,
+.login_passwordContainer input {
+    width: 517px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+    padding-left: 10px; /* Consistent padding for alignment */
+    font-size: 1.1rem;
+}
+
+.popUpDiv>form>.formContent>.login_emailDiv label,
+.popUpDiv>form>.formContent>.login_passwordContainer label {
+    color: white;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+
+.login_passwordContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordInput {
+    width: 100%;
+    height: 30px;
+    padding-right: 30px; /* Space for the eye icon */
+    padding-left: 10px; /* Space for text alignment */
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.login_togglePasswordIcon {
+    position: absolute;
+    right: 10px;
+    color: #888;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.popUpDiv>form>.formContent>.termsDiv {
+    display: flex;
+    text-align: center;
+    color: #404040;
+    font-size: 1rem;
+}
+
+.popUpDiv>form>.formContent>.termsDiv>input {
+    height: 18px;
+    width: 18px;
+}
+
+.popUpDiv>form>.formContent>.termsDiv>label>a {
+    text-decoration: none;
+    color: #880808;
+}
+
+.popUpDiv>form>.formContent>.submit {
+    align-self: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #880808;
+    color: white;
+    font-size: 1.0rem;
+    font-weight: 400;
+}
+
+.popUpDiv>form>.signInP {
+    align-self: center;
+}
+
+.popUpDiv>form>.signInP>a {
+    text-decoration: none;
+    color: #880808;
+}
+
+

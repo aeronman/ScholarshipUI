@@ -1,0 +1,154 @@
+.input-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 4%;
+    gap: 3vh;
+}
+
+.applicationLabel {
+    font-size: .9rem;
+    color: #6B6F72;
+}
+
+.input-container-6,
+.input-container-7,
+.input-container-8,
+.input-container-9,
+.input-container-10 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Input Div*/
+.input-container-6-1,
+.input-container-6-2,
+.input-container-6-3 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+/*Input-text format*/
+.input-container-6-1>input,
+.input-container-6-2>input,
+.input-container-6-3>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-6-1>select,
+.input-container-6-2>select,
+.input-container-6-3>select {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-7-1,
+.input-container-7-2,
+.input-container-7-3 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+.input-container-7-1>input,
+.input-container-7-2>input,
+.input-container-7-3>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-7-1>select,
+.input-container-7-2>select,
+.input-container-7-3>select{
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-8-1,
+.input-container-8-2,
+.input-container-8-3{
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+.input-container-8-1>input,
+.input-container-8-2>input,
+.input-container-8-3>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-8-1>select,
+.input-container-8-2>select,
+.input-container-8-3>select {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+
+.radioDiv>input {
+    margin-left: 7%;
+}
+
+.input-container-9-1,
+.input-container-9-2,
+.input-container-9-3 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+.input-container-9-1>input,
+.input-container-9-2>input,
+.input-container-9-3>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-9-1>select,
+.input-container-9-2>select,
+.input-container-9-3>select{
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-10-1,
+.input-container-10-2,
+.input-container-10-3 {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    gap: .5vh;
+}
+
+.input-container-10-1>input,
+.input-container-10-2>input,
+.input-container-10-3>input {
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+
+.input-container-10-1>select,
+.input-container-10-2>select,
+.input-container-10-3>select{
+    height: 3.3vh;
+    border-radius: 8px;
+    border: 1px solid #6B6F72;
+}
+

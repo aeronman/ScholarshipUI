@@ -1,0 +1,112 @@
+/* Outer container */
+.AdminDashboardDiv1 {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.AdminDashboardDiv1-1 {
+    position: fixed;
+    height: 100vh;
+    width: 15%;
+}
+
+/* Main content */
+.AdminDashboardDiv1-2 {
+    margin-left: 15%;
+    flex-grow: 1;
+    height: 100vh;
+    width: 85%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Profile Section */
+.AdminDashboardDiv1-2-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+}
+
+/* Scholars, Applicants, and Mission */
+.AdminDashboardDiv1-2-2 {
+    display: flex;
+    height: 60%;
+}
+
+.AdminDashboardDiv1-2-2-1 {
+    width: 50%;
+}
+
+.AdminDashboardDiv1-2-2-1-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46.5%;
+}
+
+.AdminDashboardDiv1-2-2-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+
+/* Charts Section */
+.AdminDashboardCharts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Donut and Graph Chart Container (Side by Side) */
+.DonutGraphWrapper {
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+}
+
+/* Donut Chart Container */
+.AdminDonutChartContainer {
+    width: 42%;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);;
+    text-align: center;
+    margin-left: -5px;
+}
+
+
+/* Graph Chart Container */
+.AdminGraphChartContainer {
+    width: 49%;
+    padding: 15px; 
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    text-align: center;
+}
+
+/* Labels for Donut and Graph Charts */
+.DonutChartLabel, .GraphChartLabel {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Line Chart Container */
+.LineChartContainer {
+    width: 92%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .5);
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 70px;
+}

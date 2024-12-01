@@ -1,0 +1,320 @@
+.regProfile1 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .regProfile1-1 {
+    height: 100vh;
+    width: 15%;
+    background-color: white;
+  }
+  
+  .regProfile1-2 {
+    width: 85%;
+  }
+  
+  /* Profile Section */
+  .regProfile1-2-1 {
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+  }
+
+ /* Profile Container */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px; /* Reduced margin */
+  padding: 10px; /* Reduced padding */
+  height: calc(100vh - 100px); /* Adjust height to fit within the viewport */
+  border-radius: 10px;
+  background-color: transparent;
+  align-items: stretch; /* Ensures all child elements stretch to the same height */
+}
+
+/* Profile Card Styles */
+.profile-card {
+  flex: 1;
+  width: 450px; /* Reduced width */
+  height: 49%;
+  text-align: center;
+  padding: 15px; /* Reduced padding */
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Evenly spaces content */
+}
+
+
+/* Avatar */
+.profile-avatar {
+  width: 80px; /* Reduced size */
+  height: 80px; /* Reduced size */
+  
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Profile Text */
+.profile-id {
+  font-size: 20px; /* Reduced font size */
+  margin-top: 10px;
+  margin-bottom: 20px; /* Reduced bottom margin */
+  color: #000000;
+}
+
+.profile-name {
+  font-size: 24px; /* Reduced font size */
+  color: #7D0A0A;
+}
+
+.profile-status {
+  font-size: 16px; /* Reduced font size */
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Details Container */
+.details-container {
+  flex: 2;
+}
+
+/* Personal Information Section */
+.personal-info-section {
+  margin-bottom: 15px;
+  padding: 12px; /* Reduced padding */
+  height: 57%;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+.personal-info-section h3 {
+  margin-bottom: 8px; /* Reduced margin */
+  color: #7D0A0A;
+  font-size: 16px; /* Reduced font size */
+}
+
+.personal-info-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.personal-info-section li {
+  margin-bottom: 8px; /* Reduced margin */
+  font-size: 14px; /* Reduced font size */
+}
+
+.personal-info-section li span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Education Status Section */
+.education-status-section {
+  margin-bottom: 18px; /* Reduced margin */
+  padding: 12px; /* Reduced padding */
+  flex-grow: 1; /* Makes the section grow to take available space */
+  height: 40%;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+.education-status-section h3 {
+  margin-bottom: 8px; /* Reduced margin */
+  color: #7D0A0A;
+  font-size: 16px; /* Reduced font size */
+}
+
+.education-status-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.education-status-section li {
+  margin-bottom: 8px; /* Reduced margin */
+  font-size: 14px; /* Reduced font size */
+}
+
+.education-status-section li span {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px; /* Reduced padding */
+  font-size: 12px; /* Reduced font size */
+  color: #fff;
+  background-color: #f9a825;
+  width: auto; /* Auto width */
+  border-radius: 5px;
+  margin-top: 10px; /* Added margin for spacing */
+}
+
+
+/* Current School Section Style */
+.current-school-section {
+  margin-top: 14px; /* Reduced margin */
+  padding: 12px; /* Reduced padding */
+  flex-grow: 1; /* Makes the section grow to take available space */
+  height: 40%;
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+.current-school-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.current-school-section li {
+  margin-bottom: 8px; /* Reduced margin */
+  font-size: 14px; /* Reduced font size */
+}
+
+/* Divider Line Styling */
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 8px 0; /* Reduced margin */
+}
+
+
+/* General Styling for Detail Items */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0; /* Reduced padding */
+  font-size: 14px; /* Reduced font size */
+}
+
+.detail-label {
+  flex: 1;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.detail-value {
+  flex: 1;
+  text-align: center;
+  color: #555;
+}
+
+
+/* Avatar Container */
+.avatar-container {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center avatar horizontally */
+  align-items: center;     /* Center avatar vertically */
+  width: 100%;             /* Take full width of parent container */
+  height: 100%;            /* Take full height of parent container */
+  margin-bottom: 20px;     /* Add some space below the avatar */
+}
+
+/* Avatar */
+.profile-avatar {
+  width: 190px;             /* Increased size for the avatar */
+  height: 190px;            /* Increased size for the avatar */
+  border-radius: 50%;       /* Make it circular */
+  object-fit: cover;        /* Ensure the image fits within the circle */
+  display: block;           /* Remove extra space under the image */
+  border: 7px solid #555; /* Red border for better visibility */
+}
+
+
+/* Edit Button */
+.edit-avatar-button {
+  position: absolute;
+  bottom: 40px;              /* Positioning the button at the bottom-right of the avatar */
+  right: 130px;               /* Positioning the button at the bottom-right of the avatar */
+  width: 40px;              /* Adjust size for the edit button */
+  height: 40px;             /* Adjust size for the edit button */
+  background-color: #7D0A0A; /* Button color */
+  border: none;
+  border-radius: 50%;       /* Make it circular */
+  color: white;
+  font-size: 30px;          /* Icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.edit-avatar-button:hover {
+  background-color: #fffdfd;   /* Darken button color on hover */
+}
+
+.pencil-icon {
+  font-size: 20px;          /* Adjust the pencil icon size */
+}
+/* Media Queries for Responsiveness */
+
+/* For small screens (mobiles) */
+@media (max-width: 600px) {
+  /* Avatar */
+  .profile-avatar {
+    width: 70px;    /* Smaller size for mobile */
+    height: 70px;   /* Smaller size for mobile */
+  }
+
+  /* Edit Button */
+  .edit-avatar-button {
+    width: 25px;    /* Smaller button on mobile */
+    height: 25px;   /* Smaller button on mobile */
+    font-size: 14px; /* Smaller icon */
+  }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 900px) {
+  /* Avatar */
+  .profile-avatar {
+    width: 90px;    /* Medium size for tablets */
+    height: 90px;   /* Medium size for tablets */
+  }
+
+  /* Edit Button */
+  .edit-avatar-button {
+    width: 28px;    /* Slightly smaller button */
+    height: 28px;   /* Slightly smaller button */
+    font-size: 16px; /* Slightly smaller icon */
+  }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 901px) {
+  /* Avatar */
+  .profile-avatar {
+    width: 190px;    /* Default size for desktops */
+    height: 190px;   /* Default size for desktops */
+  }
+
+  /* Edit Button */
+  .edit-avatar-button {
+    width: 30px;    /* Default button size for desktops */
+    height: 30px;   /* Default button size for desktops */
+    font-size: 18px; /* Default icon size for desktops */
+  }
+}
