@@ -9,8 +9,7 @@ import Peer from "simple-peer";
 import io from "socket.io-client";
 
 
-const socket = io.connect("https://ad7fc898-6610-40e2-9f32-532c0872946d-00-avwy8n55c57b.riker.replit.dev");
-
+const socket = io.connect("http://localhost:5000");
 
 function VideoCall() {
   const [me, setMe] = useState("");
@@ -33,7 +32,6 @@ function VideoCall() {
     // Listen for socket events
     socket.on("me", (id) => {
       setMe(id);
-      console.log("MY ID", id);
     });
 
     socket.on("callUser", (data) => {
@@ -141,7 +139,7 @@ function VideoCall() {
 
   return (
     <>
-      <h1 style={{ textAlign: "center", color: "black" }}>Tanginang Interview Yan</h1>
+      <h1 style={{ textAlign: "center", color: "black" }}>Interview</h1>
       <button onClick={startStream}>Start Video</button>
       <div className="container">
         <div className="video-container">
