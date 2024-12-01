@@ -175,10 +175,8 @@ export default function App() {
             path="/regProfile"
             element={<ProtectedRoute element={<RegProfile />} allowedUserTypes={["Student"]} />}
           />
-          <Route
-            path="/regInterview"
-            element={<ProtectedRoute element={<RegInterview />} allowedUserTypes={["Student"]} />}
-          />
+          <Route path="/regInterview" element={<RegInterview />} />
+
         </Route>
 
         {/* Admin Routes */}
