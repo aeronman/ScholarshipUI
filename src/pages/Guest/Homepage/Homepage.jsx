@@ -7,7 +7,7 @@ import "./components/homepage.css"
 
 export default function HomePage() {
     return (
-        <div>
+        <div class="parentDiv">
             <Navbar />
             <Header />
             <Body />
