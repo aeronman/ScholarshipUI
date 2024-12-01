@@ -1,8 +1,4 @@
-.parentDiv{
-    overflow-y: auto; /* Enable vertical scrolling */
-    box-sizing: border-box; /* Ensure padding doesn't affect total dimensions */
-    height: auto;
-}
+
 /*HEADER*/
 .headerDiv {
     position: relative;
@@ -68,7 +64,9 @@
 
     background-color: white;
     padding: 5% 13% 10% 11%;
-
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100vh - 600px); /* Subtract header height to fit the viewport */
+    box-sizing: border-box; /* Ensure padding doesn't affect total dimensions */
     background-color: white;
     padding: 5% 13% 10% 11%;
 }
