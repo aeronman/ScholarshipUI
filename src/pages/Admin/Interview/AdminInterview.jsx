@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import TextField from "@material-ui/core/TextField";
-import AssignmentIcon from "@material-ui/icons/Assignment";
-import PhoneIcon from "@material-ui/icons/Phone";
+import { Button, IconButton, TextField } from "@material-ui/core";
+import { Assignment as AssignmentIcon, Phone as PhoneIcon } from "@material-ui/icons";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
@@ -11,7 +8,7 @@ import "./AdminInterview.css";
 
 const socket = io.connect("https://ad7fc898-6610-40e2-9f32-532c0872946d-00-avwy8n55c57b.riker.replit.dev");
 
-function VideoCall() {
+const VideoCall = () => {
   const [me, setMe] = useState("");
   const [stream, setStream] = useState(null);
   const [receivingCall, setReceivingCall] = useState(false);
@@ -26,25 +23,22 @@ function VideoCall() {
   const userVideo = useRef(null);
   const connectionRef = useRef(null);
 
-  // Start the media stream and set it up
-  const startStream = async () => {
-    try {
-      const currentStream = await navigator.mediaDevices.getUserMedia({
-        video: true,
-        audio: true,
-      });
-      setStream(currentStream);
-      myVideo.current.srcObject = currentStream;
-    } catch (error) {
-      console.error("Error accessing media devices:", error);
-    }
-  };
-
-  // Handle socket events for user connection and incoming calls
   useEffect(() => {
+    const startStream = async () => {
+      try {
+        const currentStream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: true,
+        });
+        setStream(currentStream);
+        myVideo.current.srcObject = currentStream;
+      } catch (error) {
+        console.error("Error accessing media devices:", error);
+      }
+    };
+
     socket.on("me", (id) => {
       setMe(id);
-      console.log("My socket ID:", id);
     });
 
     socket.on("callUser", (data) => {
@@ -54,22 +48,22 @@ function VideoCall() {
       setCallerSignal(data.signal);
     });
 
+    startStream();
+
     return () => {
       socket.off("me");
       socket.off("callUser");
-
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
     };
   }, [stream]);
 
-  // Function to call another user
   const callUser = (id) => {
     const peer = new Peer({
       initiator: true,
       trickle: false,
-      stream: stream,
+      stream,
     });
 
     peer.on("signal", (data) => {
@@ -77,14 +71,12 @@ function VideoCall() {
         userToCall: id,
         signalData: data,
         from: me,
-        name: name,
+        name,
       });
     });
 
-    peer.on("stream", (stream) => {
-      if (userVideo.current) {
-        userVideo.current.srcObject = stream;
-      }
+    peer.on("stream", (remoteStream) => {
+      userVideo.current.srcObject = remoteStream;
     });
 
     socket.on("callAccepted", (signal) => {
@@ -95,40 +87,33 @@ function VideoCall() {
     connectionRef.current = peer;
   };
 
-  // Function to answer an incoming call
   const answerCall = () => {
     setCallAccepted(true);
 
     const peer = new Peer({
       initiator: false,
       trickle: false,
-      stream: stream,
+      stream,
     });
 
     peer.on("signal", (data) => {
       socket.emit("answerCall", { signal: data, to: caller });
     });
 
-    peer.on("stream", (stream) => {
-      if (userVideo.current) {
-        userVideo.current.srcObject = stream;
-      }
+    peer.on("stream", (remoteStream) => {
+      userVideo.current.srcObject = remoteStream;
     });
 
     peer.signal(callerSignal);
     connectionRef.current = peer;
   };
 
-  // Function to leave the call
   const leaveCall = () => {
     setCallEnded(true);
-    if (connectionRef.current) {
-      connectionRef.current.destroy();
-    }
+    connectionRef.current.destroy();
     window.location.reload();
   };
 
-  // Callback for copy to clipboard
   const handleCopy = () => {
     alert("ID copied to clipboard!");
   };
@@ -160,6 +145,7 @@ function VideoCall() {
             )}
           </div>
         </div>
+
         <div className="myId">
           <TextField
             label="Name"
@@ -168,7 +154,8 @@ function VideoCall() {
             onChange={(e) => setName(e.target.value)}
             className="input-field"
           />
-          <CopyToClipboard text={me} onCopy={handleCopy} style={{ marginBottom: "2rem" }}>
+          
+          <CopyToClipboard text={me} onCopy={handleCopy}>
             <Button
               variant="contained"
               color="primary"
@@ -186,6 +173,7 @@ function VideoCall() {
             onChange={(e) => setIdToCall(e.target.value)}
             className="input-field"
           />
+
           <div className="call-button">
             {callAccepted && !callEnded ? (
               <Button variant="contained" color="secondary" onClick={leaveCall} className="end-call-button">
@@ -203,25 +191,24 @@ function VideoCall() {
             )}
           </div>
         </div>
-        <div>
-          {receivingCall && !callAccepted && (
-            <div className="caller">
-              <h1>{name} is calling...</h1>
-              <Button variant="contained" color="primary" onClick={answerCall} className="answer-button">
-                Answer
-              </Button>
-            </div>
-          )}
-        </div>
+
+        {receivingCall && !callAccepted && (
+          <div className="caller">
+            <h1>{name} is calling...</h1>
+            <Button variant="contained" color="primary" onClick={answerCall} className="answer-button">
+              Answer
+            </Button>
+          </div>
+        )}
       </div>
-      {/* Added wrapper for Start Video button */}
+
       <div className="start-button-container">
-        <button className="start-button" onClick={startStream}>
+        <button className="start-button" onClick={() => {}}>
           Start Video
         </button>
       </div>
     </>
   );
-}
+};
 
 export default VideoCall;

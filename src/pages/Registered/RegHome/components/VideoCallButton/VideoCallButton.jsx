@@ -6,7 +6,7 @@ export default function VideoCallButton() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/Admin/regInterview", { state: { applicantEmail: "applicant@example.com" } }); // Replace with dynamic email
+        navigate("/regInterview", { state: { applicantEmail: "applicant@example.com" } }); // Replace with dynamic email
     };
 
     return (
