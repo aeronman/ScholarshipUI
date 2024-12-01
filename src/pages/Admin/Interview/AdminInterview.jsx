@@ -7,9 +7,9 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
+import './AdminIterview.css';
 
-
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://ad7fc898-6610-40e2-9f32-532c0872946d-00-avwy8n55c57b.riker.replit.dev");
 
 function VideoCall() {
   const [me, setMe] = useState("");
@@ -26,12 +26,25 @@ function VideoCall() {
   const userVideo = useRef(null);
   const connectionRef = useRef(null);
 
+  // Start the media stream and set it up
+  const startStream = async () => {
+    try {
+      const currentStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true,
+      });
+      setStream(currentStream);
+      myVideo.current.srcObject = currentStream;
+    } catch (error) {
+      console.error("Error accessing media devices:", error);
+    }
+  };
+
+  // Handle socket events for user connection and incoming calls
   useEffect(() => {
-    
-   
-    // Listen for socket events
     socket.on("me", (id) => {
       setMe(id);
+      console.log("My socket ID:", id);
     });
 
     socket.on("callUser", (data) => {
@@ -41,31 +54,25 @@ function VideoCall() {
       setCallerSignal(data.signal);
     });
 
+    socket.on("callAccepted", (signal) => {
+      setCallAccepted(true);
+      connectionRef.current.signal(signal);
+    });
+
     return () => {
       // Cleanup listeners on unmount
       socket.off("me");
       socket.off("callUser");
+      socket.off("callAccepted");
 
       // Stop media stream on component unmount
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
     };
-  }, []);
+  }, [stream]);
 
-    // Start media stream
-    const startStream = async () => {
-        try {
-          const currentStream = await navigator.mediaDevices.getUserMedia({
-            video: true,
-            audio: true,
-          });
-          setStream(currentStream);
-          myVideo.current.srcObject = currentStream;
-        } catch (error) {
-          console.error("Error accessing media devices:", error);
-        }
-      };
+  // Function to call another user
   const callUser = (id) => {
     const peer = new Peer({
       initiator: true,
@@ -82,10 +89,9 @@ function VideoCall() {
       });
     });
 
-    peer.on("stream", (stream) => {
-      console.log("Peer stream received:", stream);
+    peer.on("stream", (remoteStream) => {
       if (userVideo.current) {
-        userVideo.current.srcObject = stream;
+        userVideo.current.srcObject = remoteStream;
       }
     });
 
@@ -93,14 +99,10 @@ function VideoCall() {
       console.error("Peer error:", err);
     });
 
-    socket.on("callAccepted", (signal) => {
-      setCallAccepted(true);
-      peer.signal(signal);
-    });
-
     connectionRef.current = peer;
   };
 
+  // Function to answer an incoming call
   const answerCall = () => {
     setCallAccepted(true);
 
@@ -114,10 +116,9 @@ function VideoCall() {
       socket.emit("answerCall", { signal: data, to: caller });
     });
 
-    peer.on("stream", (stream) => {
-      console.log("Peer stream received on answer:", stream);
+    peer.on("stream", (remoteStream) => {
       if (userVideo.current) {
-        userVideo.current.srcObject = stream;
+        userVideo.current.srcObject = remoteStream;
       }
     });
 
@@ -129,12 +130,18 @@ function VideoCall() {
     connectionRef.current = peer;
   };
 
+  // Function to leave the call
   const leaveCall = () => {
     setCallEnded(true);
     if (connectionRef.current) {
       connectionRef.current.destroy();
     }
-    window.location.reload(); // Optional: Reset the state after ending the call
+    window.location.reload();
+  };
+
+  // Callback for copy to clipboard
+  const handleCopy = () => {
+    alert("ID copied to clipboard!");
   };
 
   return (
@@ -143,7 +150,6 @@ function VideoCall() {
       <button onClick={startStream}>Start Video</button>
       <div className="container">
         <div className="video-container">
-    
           <div className="video">
             {stream && (
               <video
@@ -156,18 +162,17 @@ function VideoCall() {
             )}
           </div>
           <div className="video">
-            {callAccepted && !callEnded ? (
+            {callAccepted && !callEnded && (
               <video
                 playsInline
                 ref={userVideo}
                 autoPlay
                 style={{ width: "300px" }}
               />
-            ) : null}
+            )}
           </div>
         </div>
         <div className="myId">
-       
           <TextField
             id="filled-basic"
             label="Name"
@@ -176,7 +181,7 @@ function VideoCall() {
             onChange={(e) => setName(e.target.value)}
             style={{ marginBottom: "20px" }}
           />
-          <CopyToClipboard text={me} style={{ marginBottom: "2rem" }}>
+          <CopyToClipboard text={me} onCopy={handleCopy} style={{ marginBottom: "2rem" }}>
             <Button
               variant="contained"
               color="primary"
@@ -210,14 +215,14 @@ function VideoCall() {
           </div>
         </div>
         <div>
-          {receivingCall && !callAccepted ? (
+          {receivingCall && !callAccepted && (
             <div className="caller">
               <h1>{name} is calling...</h1>
               <Button variant="contained" color="primary" onClick={answerCall}>
                 Answer
               </Button>
             </div>
-          ) : null}
+          )}
         </div>
       </div>
     </>
