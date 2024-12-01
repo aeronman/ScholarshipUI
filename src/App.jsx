@@ -16,7 +16,7 @@ import RegStatus from "./pages/Registered/RegStatus/RegStatus";
 import RegProfile from "./pages/Registered/RegProfile/RegProfile";
 import RegFAQs from "./pages/Registered/RegFAQs/RegFAQs";
 import RegFeedbacks from "./pages/Registered/RegFeedbacks/RegFeedback";
-import RegInterview from "./pages/Registered/Interview/RegisteredInterview";
+
 
 // Admin Pages
 import AdminDashboard from "./pages/Admin/Dashboard/AdminDashboard";
@@ -174,7 +174,7 @@ export default function App() {
             path="/regProfile"
             element={<ProtectedRoute element={<RegProfile />} allowedUserTypes={["Student"]} />}
           />
-          <Route path="/regInterview" element={<RegInterview />} />
+          <Route path="/Interview" element={<AdminInterview />} />
 
         </Route>
 
@@ -211,10 +211,7 @@ export default function App() {
           path="/Admin/Profile"
           element={<ProtectedRoute element={<AdminProfile />} allowedUserTypes={["admin"]} />}
         />
-        <Route
-          path="/Admin/Interview"
-          element={<ProtectedRoute element={<AdminInterview />} allowedUserTypes={["admin"]} />}
-        />
+      
         <Route
           path="/Admin/QR"
           element={<ProtectedRoute element={<AdminQR />} allowedUserTypes={["admin"]} />}

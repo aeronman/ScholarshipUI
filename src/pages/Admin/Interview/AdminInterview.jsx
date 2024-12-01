@@ -25,11 +25,22 @@ function VideoCall() {
 	const userVideo = useRef()
 	const connectionRef= useRef()
 
+  // Start the media stream and set it up
+  const startStream = async () => {
+    try {
+      const currentStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true,
+      });
+      setStream(currentStream);
+      myVideo.current.srcObject = currentStream;
+    } catch (error) {
+      console.error("Error accessing media devices:", error);
+    }
+  };
+
 	useEffect(() => {
-		navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
-			setStream(stream)
-				myVideo.current.srcObject = stream
-		})
+		
 
 	socket.on("me", (id) => {
 			setMe(id)
@@ -95,11 +106,12 @@ function VideoCall() {
 
 	return (
 		<>
-			<h1 style={{ textAlign: "center", color: '#fff' }}>Zoomish</h1>
-		<div className="container">
+			<h1 style={{ textAlign: "center", color: '#fff' }}>Interview</h1>
+      <button onClick={startStream}>Start Video</button>
+    <div className="container">
 			<div className="video-container">
 				<div className="video">
-					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
+					{stream &&  <video playsInline ref={myVideo} autoPlay style={{ width: "300px" }} />}
 				</div>
 				<div className="video">
 					{callAccepted && !callEnded ?
