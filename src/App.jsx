@@ -94,7 +94,7 @@ export default function App() {
             path="/"
             element={
               userType === "Student" ? (
-                <Navigate to="/regDashboard" />
+                <Navigate to="/regdashboard" />
               ) : userType === "admin" ? (
                 <Navigate to="/Admin/Dashboard" />
               ) : userType === "superadmin" ? (
@@ -108,7 +108,7 @@ export default function App() {
             path="/about"
             element={
               userType === "Student" ? (
-                <Navigate to="/regDashboard" />
+                <Navigate to="/regdashboard" />
               ) : userType === "admin" ? (
                 <Navigate to="/Admin/Dashboard" />
               ) : userType === "superadmin" ? (
@@ -122,7 +122,7 @@ export default function App() {
             path="/login"
             element={
               userType === "Student" ? (
-                <Navigate to="/regDashboard" />
+                <Navigate to="/regdashboard" />
               ) : userType === "admin" ? (
                 <Navigate to="/Admin/Dashboard" />
               ) : userType === "superadmin" ? (
@@ -136,7 +136,7 @@ export default function App() {
             path="/signup"
             element={
               userType === "Student" ? (
-                <Navigate to="/regDashboard" />
+                <Navigate to="/regdashboard" />
               ) : userType === "admin" ? (
                 <Navigate to="/Admin/Dashboard" />
               ) : userType === "superadmin" ? (
