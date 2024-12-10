@@ -166,8 +166,20 @@ const RegApplication1 = forwardRef((props, ref) => {
 
             <div className="input-container-3">
             <div className="input-container-3-1">
-                    <label className="applicationLabel" htmlFor="CONTACT_NO">Contact Number<span className="red">*</span></label>
-                    <input type="text" name="CONTACT_NO" id="CONTACT_NO" value={formData.CONTACT_NO} onChange={handleChange} required />
+            <label className="applicationLabel" htmlFor="CONTACT_NO">Contact Number<span className="red">*</span></label>
+                    <input
+                        type="text"
+                        name="CONTACT_NO"
+                        id="CONTACT_NO"
+                        value={formData.CONTACT_NO}
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            if (/^\d*$/.test(value)) { // Allow only digits
+                                handleChange(e);
+                            }
+                        }}
+                        required
+                    />
                 </div>
                 <div className="input-container-3-2">
                     <label className="applicationLabel" htmlFor="PROVINCE">Province</label>
