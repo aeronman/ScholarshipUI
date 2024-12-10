@@ -71,7 +71,7 @@ export default function App() {
 
     if (!allowedUserTypes.includes(userType)) {
       if (userType === "Student") {
-        return <Navigate to="/regDashboard" />;
+        return <Navigate to="/regdashboard" />;
       }
       if (userType === "admin") {
         return <Navigate to="/Admin/Dashboard" />;

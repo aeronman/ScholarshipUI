@@ -22,7 +22,7 @@
   }
 
  /* Profile Container */
-.profile-container {
+.profile-PictureDiv {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -35,7 +35,7 @@
 }
 
 /* Profile Card Styles */
-.profile-card {
+.profilePicture2 {
   flex: 1;
   width: 450px; /* Reduced width */
   height: 49%;
@@ -51,7 +51,7 @@
 
 
 /* Avatar */
-.profile-avatar {
+.profileAvatar {
   width: 80px; /* Reduced size */
   height: 80px; /* Reduced size */
   
@@ -60,19 +60,19 @@
 }
 
 /* Profile Text */
-.profile-id {
+.profileScholarId {
   font-size: 20px; /* Reduced font size */
   margin-top: 10px;
   margin-bottom: 20px; /* Reduced bottom margin */
   color: #000000;
 }
 
-.profile-name {
+.profileScholarName {
   font-size: 24px; /* Reduced font size */
   color: #7D0A0A;
 }
 
-.profile-status {
+.profileScholarstatus {
   font-size: 16px; /* Reduced font size */
   color: #555;
   margin-top: 10px;
@@ -221,7 +221,7 @@
 
 
 /* Avatar Container */
-.avatar-container {
+.profileAvatarDiv {
   position: relative;
   display: flex;
   justify-content: center; /* Center avatar horizontally */
@@ -243,7 +243,7 @@
 
 
 /* Edit Button */
-.edit-avatar-button {
+.profileAvatar-button {
   position: absolute;
   bottom: 40px;              /* Positioning the button at the bottom-right of the avatar */
   right: 130px;               /* Positioning the button at the bottom-right of the avatar */
@@ -262,7 +262,7 @@
   transition: background-color 0.3s ease;
 }
 
-.edit-avatar-button:hover {
+.profileAvatar-button:hover {
   background-color: #fffdfd;   /* Darken button color on hover */
 }
 
@@ -280,7 +280,7 @@
   }
 
   /* Edit Button */
-  .edit-avatar-button {
+  .profileAvatar-button {
     width: 25px;    /* Smaller button on mobile */
     height: 25px;   /* Smaller button on mobile */
     font-size: 14px; /* Smaller icon */
@@ -296,7 +296,7 @@
   }
 
   /* Edit Button */
-  .edit-avatar-button {
+  .profileAvatar-button {
     width: 28px;    /* Slightly smaller button */
     height: 28px;   /* Slightly smaller button */
     font-size: 16px; /* Slightly smaller icon */
@@ -312,7 +312,7 @@
   }
 
   /* Edit Button */
-  .edit-avatar-button {
+  .profileAvatar-button {
     width: 30px;    /* Default button size for desktops */
     height: 30px;   /* Default button size for desktops */
     font-size: 18px; /* Default icon size for desktops */
