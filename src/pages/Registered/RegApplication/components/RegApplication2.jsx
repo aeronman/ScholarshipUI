@@ -53,6 +53,12 @@ const RegApplication1 = forwardRef((props, ref) => {
 
 
     const validateForm = () => {
+         // Age validation (can't apply if age is 30 or older)
+         if (formData.age >= 30) {
+            alert("You cannot apply if you are 30 years or older.");
+            return false;
+        }
+
         for (let key in formData) {
             if (!formData[key] && key !== 'PWDPreview' && key !== 'PWD_ID' && key !== 'MIDDLE_NAME' && key !== 'PWD')  { 
                 alert(`${key} is required!`);

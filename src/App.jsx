@@ -213,8 +213,8 @@ export default function App() {
         />
       
         <Route
-          path="/Admin/QR"
-          element={<ProtectedRoute element={<AdminQR />} allowedUserTypes={["admin"]} />}
+          path="/QR"
+          element={<AdminQR />}
         />
 
         {/* SuperAdmin Routes */}
