@@ -15,14 +15,11 @@ function ApplicationDetailsForm() {
                     return;
                 }
 
-                const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/get/getPersonalDetails.php?userID=${userID}`
-                    
-                );
+                const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/get/getPersonalDetails.php?userID=${userID}`);
                 const data = await response.json();
 
                 if (data && !data.message) {
                     setApplicantData(data); // Update the state with the fetched data
-                 
                 } else {
                     console.error("Error fetching data:", data.message);
                 }
@@ -36,6 +33,19 @@ function ApplicationDetailsForm() {
         fetchApplicantData();
     }, []);
 
+    const handlePrint = () => {
+        const contentToPrint = document.querySelector('.application-form');
+        const originalContent = document.body.innerHTML;
+        
+        // Hide all other content except the one to print
+        document.body.innerHTML = contentToPrint.outerHTML;
+
+        window.print(); // Trigger print dialog
+
+        // Restore the original content after printing
+        document.body.innerHTML = originalContent;
+    };
+
     if (loading) {
         return <div>Loading...</div>; // Show loading state while fetching data
     }
@@ -43,13 +53,14 @@ function ApplicationDetailsForm() {
     if (!applicantData) {
         return <div>No pending application yet.</div>; // Display message if no data
     }
-    console.log(applicantData);
+
     return (
-        
         <div className="application-form">
             <h2>Application Details</h2>
             <h4>Personal Information of the Applicant</h4>
             <p>This section displays the applicant's submitted information.</p>
+
+            <button onClick={handlePrint} className="print-button">Print</button> {/* Print Button */}
 
             <div className="form-grid">
                 <div className="form-group">
