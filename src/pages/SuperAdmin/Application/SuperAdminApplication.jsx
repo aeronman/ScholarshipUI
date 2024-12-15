@@ -28,19 +28,13 @@ export default function SuperAdminApplication() {
                         <h1>Manage Scholarship Applicants</h1>
                     </header>
 
-                    <div className="SuperAdminApplicationActions">
-                        <SearchBar />
-                        <FilterButton />
-                        <ActionButtons />
-                    </div>
+                 
 
                     <div className="SuperAdminApplicationTableContainer">
                         <ApplicantTable />
                     </div>
 
-                    <div className="SuperAdminApplicationPagination">
-                        <TablePagination />
-                    </div>
+               
                 </div>
             </div>
         </div>

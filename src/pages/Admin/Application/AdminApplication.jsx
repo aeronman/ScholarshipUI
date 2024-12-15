@@ -33,11 +33,11 @@ export default function AdminApplication() {
                         <h1>Manage Scholarship Applicants</h1>
                     </header>
 
-                    <div className="AdminApplicationActions">
+                    {/* <div className="AdminApplicationActions">
                         <SearchBar />
                         <FilterButton />
                         <ActionButtons />
-                    </div>
+                    </div> */}
 
                     {/* Applicant Table */}
                     <div className="AdminApplicationTableContainer">
@@ -45,9 +45,9 @@ export default function AdminApplication() {
                     </div>
 
                     {/* Pagination */}
-                    <div className="AdminApplicationPagination">
+                    {/* <div className="AdminApplicationPagination">
                         <TablePagination />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
