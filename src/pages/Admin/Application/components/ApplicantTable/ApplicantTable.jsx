@@ -73,7 +73,7 @@ const ApplicantTable = () => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
+    page, // Use `page` instead of `rows` for pagination
     prepareRow,
     setGlobalFilter,
     state: { globalFilter, pageIndex, pageSize },
@@ -103,20 +103,26 @@ const ApplicantTable = () => {
   };
 
   // Export to Excel
-const exportToExcel = () => {
-    const filteredData = rows.map(row => row.values);  // Extract filtered data
+  const exportToExcel = () => {
+    const filteredData = page.map((row) => row.values); // Extract only the current page data
     const ws = XLSX.utils.json_to_sheet(filteredData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "Applicants");
     XLSX.writeFile(wb, "applicants.xlsx");
   };
-  
+
   // Export to PDF
   const exportToPDF = () => {
-    const filteredData = rows.map(row => row.values);  // Extract filtered data
+    const filteredData = page.map((row) => row.values); // Extract only the current page data
     const doc = new jsPDF();
     doc.autoTable({
-      head: [["LRN/School Number", "Student Name", "Submitted Requirements", "School Email", "Barangay"]],
+      head: [[
+        "LRN/School Number",
+        "Student Name",
+        "Submitted Requirements",
+        "School Email",
+        "Barangay",
+      ]],
       body: filteredData.map((row) => [
         row.lrn,
         row.name,
@@ -127,7 +133,6 @@ const exportToExcel = () => {
     });
     doc.save("applicants.pdf");
   };
-  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -140,13 +145,17 @@ const exportToExcel = () => {
   return (
     <div className="TableContainer">
       <div>
-        <GlobalSearch globalFilter={globalFilter} setGlobalFilter={setGlobalFilter} />
-        <button class="export-button" onClick={exportToExcel}>Export to Excel <i class="fa fa-download"></i></button>
-        <button class="export-button" onClick={exportToPDF}>Export to PDF <i class="fa fa-download"></i></button>
+        <GlobalSearch
+          globalFilter={globalFilter}
+          setGlobalFilter={setGlobalFilter}
+        />
+        <button className="export-button" onClick={exportToExcel}>
+          Export to Excel <i className="fa fa-download"></i>
+        </button>
+        <button className="export-button" onClick={exportToPDF}>
+          Export to PDF <i className="fa fa-download"></i>
+        </button>
       </div>
-
-      {/* Global Search */}
-      
 
       <table {...getTableProps()} className="display ApplicantTable">
         <thead>
@@ -159,7 +168,7 @@ const exportToExcel = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {page.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -172,7 +181,6 @@ const exportToExcel = () => {
         </tbody>
       </table>
 
-      {/* Pagination Controls */}
       <div className="pagination">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {"<<"}
@@ -187,13 +195,10 @@ const exportToExcel = () => {
           {">>"}
         </button>
         <span>
-          Page{" "}
-          <strong>
-            {pageIndex + 1} of {pageCount}
-          </strong>{" "}
+          Page <strong>{pageIndex + 1} of {pageCount}</strong>
         </span>
         <span>
-          | Go to page:{" "}
+          | Go to page: 
           <input
             type="number"
             value={pageIndex + 1}

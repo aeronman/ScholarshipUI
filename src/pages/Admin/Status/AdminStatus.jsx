@@ -17,7 +17,6 @@ const StatusPage = () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/get/fetch_applicants_status.php`);
         const data = await response.json();
-        
         if (data.error) {
           console.error("Error fetching data:", data.error);
         } else {
@@ -34,22 +33,11 @@ const StatusPage = () => {
     {
       Header: 'Select',
       accessor: 'UserID',
-      Cell: ({ row }) => (
-        <input type="checkbox" />
-      )
+      Cell: ({ row }) => <input type="checkbox" />
     },
-    {
-      Header: 'Student Name',
-      accessor: 'name'
-    },
-    {
-      Header: 'Mobile Number',
-      accessor: 'mobile'
-    },
-    {
-      Header: 'School Email',
-      accessor: 'email'
-    },
+    { Header: 'Student Name', accessor: 'name' },
+    { Header: 'Mobile Number', accessor: 'mobile' },
+    { Header: 'School Email', accessor: 'email' },
     {
       Header: 'Status',
       accessor: 'status',
@@ -68,32 +56,34 @@ const StatusPage = () => {
     },
   ], []);
 
-  const data = useMemo(() => applicants, [applicants]);
+  const filteredData = useMemo(() => {
+    return applicants.filter(item =>
+      Object.values(item).some(val =>
+        String(val).toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    );
+  }, [applicants, searchQuery]);
 
-  // Table Hooks
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
+    page,
     state: { pageIndex, pageSize },
-    setPageSize,
     canNextPage,
     canPreviousPage,
     nextPage,
     previousPage,
     gotoPage,
-    setGlobalFilter
+    pageOptions,
+    setPageSize
   } = useTable(
     {
       columns,
-      data,
-      initialState: { pageIndex: 0, pageSize: 9 },
-      manualPagination: true,
-      pageCount: Math.ceil(applicants.length / 9)
+      data: filteredData,
+      initialState: { pageIndex: 0, pageSize: 10 },
     },
-    useFilters,
     useGlobalFilter,
     useSortBy,
     usePagination
@@ -102,30 +92,34 @@ const StatusPage = () => {
   // Search handling
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
-    setGlobalFilter(e.target.value || undefined);
   };
 
-  // Export to Excel (using filtered data)
+  // Export to Excel
   const exportToExcel = () => {
-    const filteredData = rows.map(row => row.values);
-    const ws = XLSX.utils.json_to_sheet(filteredData);
+    const exportData = filteredData.map(row => ({
+      'Student Name': row.name,
+      'Mobile Number': row.mobile,
+      'School Email': row.email,
+      'Status': row.status,
+    }));
+    const ws = XLSX.utils.json_to_sheet(exportData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "Applicants");
     XLSX.writeFile(wb, "applicants.xlsx");
   };
 
-  // Export to PDF (using filtered data)
+  // Export to PDF
   const exportToPDF = () => {
-    const filteredData = rows.map(row => row.values);
+    const exportData = filteredData.map(row => [
+      row.name,
+      row.mobile,
+      row.email,
+      row.status,
+    ]);
     const doc = new jsPDF();
     doc.autoTable({
       head: [['Student Name', 'Mobile Number', 'School Email', 'Status']],
-      body: filteredData.map(item => [
-        item.name,
-        item.mobile,
-        item.email,
-        item.status
-      ])
+      body: exportData,
     });
     doc.save('applicants.pdf');
   };
@@ -147,77 +141,78 @@ const StatusPage = () => {
         <div className="AdminStatus1-2-2">
           <div className="header-section">
             <div className="search-and-actions">
-              <div className="search-bar-container">
-                <input
-                  type="text"
-                  placeholder="Search user"
-                  className="search-bar"
-                  value={searchQuery}
-                  onChange={handleSearch}
-                />
-              </div>
-              <div className="action-buttons">
-                <button className="export-btn" onClick={exportToExcel}>
-                  <FaFileExport /> Export to Excel
-                </button>
-                <button className="report-btn" onClick={exportToPDF}>
-                  <FaFileExport /> Export to PDF
-                </button>
-              </div>
+              <input
+                type="text"
+                placeholder="Search user"
+                className="search-bar"
+                value={searchQuery}
+                onChange={handleSearch}
+              />
+              <button className="export-btn" onClick={exportToExcel}>
+                <FaFileExport /> Export to Excel
+              </button>
+              <button className="report-btn" onClick={exportToPDF}>
+                <FaFileExport /> Export to PDF
+              </button>
             </div>
           </div>
-
-          <table {...getTableProps()}>
-            <thead>
-              {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map(column => (
-                    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                      {column.render('Header')}
-                      <span>
-                        {column.isSorted
-                          ? column.isSortedDesc
-                            ? ' 🔽'
-                            : ' 🔼'
-                          : ''}
-                      </span>
-                    </th>
-                  ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody {...getTableBodyProps()}>
-              {rows.map(row => {
-                prepareRow(row);
-                return (
-                  <tr {...row.getRowProps()}>
-                    {row.cells.map(cell => {
-                      return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
-                    })}
+          <div className="table-container">
+            <table {...getTableProps()}>
+              <thead>
+                {headerGroups.map(headerGroup => (
+                  <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map(column => (
+                      <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                        {column.render('Header')}
+                        <span>
+                          {column.isSorted
+                            ? column.isSortedDesc
+                              ? ' 🔽'
+                              : ' 🔼'
+                            : ''}
+                        </span>
+                      </th>
+                    ))}
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                ))}
+              </thead>
+              <tbody {...getTableBodyProps()}>
+                {page.length > 0 ? (
+                  page.map(row => {
+                    prepareRow(row);
+                    return (
+                      <tr {...row.getRowProps()}>
+                        {row.cells.map(cell => (
+                          <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                        ))}
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan={columns.length} className="no-data">No data available</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
 
           <div className="pagination">
-            <button onClick={() => previousPage()} disabled={!canPreviousPage}>Previous</button>
-            <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
+            <button onClick={previousPage} disabled={!canPreviousPage}>Previous</button>
+            <button onClick={nextPage} disabled={!canNextPage}>Next</button>
             <span>
-              Page{' '}
-              <strong>
-                {pageIndex + 1} of {Math.ceil(applicants.length / pageSize)}
-              </strong>
+              Page {pageIndex + 1} of {pageOptions.length}
             </span>
-            <div className="pagination-select">
-              <select value={pageSize} onChange={(e) => setPageSize(Number(e.target.value))}>
-                {[5, 10, 15, 20].map(size => (
-                  <option key={size} value={size}>
-                    {size} per page
-                  </option>
-                ))}
-              </select>
-            </div>
+            <select
+              value={pageSize}
+              onChange={e => setPageSize(Number(e.target.value))}
+            >
+              {[5, 10, 15, 20].map(size => (
+                <option key={size} value={size}>
+                  {size} per page
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </div>
@@ -226,3 +221,5 @@ const StatusPage = () => {
 };
 
 export default StatusPage;
+
+

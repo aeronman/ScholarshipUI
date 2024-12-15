@@ -172,31 +172,26 @@
 }
 
 .table-container {
+  max-height: 400px; /* Adjust height as needed */
+  overflow-y: auto;
   overflow-x: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  border: 1px solid #ddd; /* Optional: Add a border for clarity */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 10px;
 }
 
 th, td {
-  padding: 10px;
+  padding: 8px;
   text-align: left;
-  border: 1px solid #ddd;
+  border: 1px solid #ddd; /* Optional: Add cell borders */
 }
 
-th {
-  background-color: #f4f4f4;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-tr:hover {
-  background-color: #f1f1f1;
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f4f4f4; /* Optional: Add a background for the header */
+  z-index: 1; /* Ensures the header stays on top */
 }
