@@ -98,7 +98,12 @@ function ViewDetails() {
   const handleImageClick = (imageSrc) => setModalImage(imageSrc);
   const closeModal = () => setModalImage(null);
   const viewID = localStorage.getItem("view_id");
-  const qrValue = `https://pentatech.vercel.app/QR?id=${user?.UserID}`;
+  const qrValue = `
+  Warning:
+   - Do not share or distribute the code.  
+   - The code confirms the applicant's identity.
+   View your details here:
+  https://pentatech.vercel.app/QR?id=${user?.UserID}`;
 
   return (
     <div className="container">
