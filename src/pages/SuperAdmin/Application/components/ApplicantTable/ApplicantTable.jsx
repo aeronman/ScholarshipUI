@@ -52,6 +52,7 @@ const ApplicantTable = () => {
       { Header: "Submitted Requirements", accessor: "requirements" },
       { Header: "School Email", accessor: "email" },
       { Header: "Barangay", accessor: "BARANGAY" },
+      { Header: "Date Applied", accessor: "date_applied" },
       { Header: "School", accessor: "newSchool" },
       {
         Header: "Action",
@@ -123,6 +124,8 @@ const ApplicantTable = () => {
         "Submitted Requirements",
         "School Email",
         "Barangay",
+        "Date Applied",
+
       ]],
       body: filteredData.map((row) => [
         row.lrn,
@@ -131,6 +134,7 @@ const ApplicantTable = () => {
         row.email,
         row.BARANGAY,
         row.newSchool,
+        row.date_applied,
       ]),
     });
     doc.save("applicants.pdf");
