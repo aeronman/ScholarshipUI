@@ -105,17 +105,17 @@ const saveProfilePic = async () => {
         <div className="regProfile1-2-1">
           <RegProfile />
         </div>
-        <div className="profile-PictureDiv">
-          <div className="profilePicture1">
-            <div className="profilePicture2">
-              <div className="profileAvatarDiv">
+        <div className="profile-container">
+          <div className="profile-current">
+            <div className="profile-card">
+              <div className="avatar-container">
                 <img
                   src={avatar}
-                  alt="Profile Picture"
-                  className="profileAvatar"
+                  alt="Profile Avatar"
+                  className="profile-avatar"
                 />
                 <button
-                  className="profileAvatar-button"
+                  className="edit-avatar-button"
                   onClick={() => document.getElementById('avatar-upload').click()}
                 >
                   <i className="pencil-icon">&#9998;</i>
@@ -128,9 +128,9 @@ const saveProfilePic = async () => {
                 onChange={handleAvatarChange}
                 style={{ display: 'none' }}
               />
-              <h2 className="profileScholarId">{userData.Student_ID}</h2>
-              <h1 className="profileScholarName">{userData.FIRST_NAME} {userData.MIDDLE_NAME}</h1>
-              <p className="profileScholarstatus">{userData.newSchool}</p>
+              <h2 className="profile-id">{userData.Student_ID}</h2>
+              <h1 className="profile-name">{userData.FIRST_NAME} {userData.MIDDLE_NAME}</h1>
+              <p className="profile-status">{userData.newSchool}</p>
             </div>
             <div className="details-section current-school-section">
               <div className="detail-item">
