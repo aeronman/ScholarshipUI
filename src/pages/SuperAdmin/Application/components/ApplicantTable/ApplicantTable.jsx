@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import axios from "axios";
-import { useTable, useGlobalFilter, usePagination } from "react-table";
+import { useTable, useGlobalFilter, usePagination, useSortBy } from "react-table";
 import * as XLSX from "xlsx";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable"; // For table support in jsPDF
@@ -46,7 +46,6 @@ const ApplicantTable = () => {
 
   const columns = useMemo(
     () => [
-      
       { Header: "LRN/School Number", accessor: "lrn" },
       { Header: "Student Name", accessor: "name" },
       { Header: "Submitted Requirements", accessor: "requirements" },
@@ -70,7 +69,7 @@ const ApplicantTable = () => {
     []
   );
 
-  // React Table hooks setup (with Global Filter and Pagination)
+  // React Table hooks setup (with Global Filter, Pagination, and Sorting)
   const {
     getTableProps,
     getTableBodyProps,
@@ -96,7 +95,8 @@ const ApplicantTable = () => {
       },
     },
     useGlobalFilter,
-    usePagination
+    usePagination,
+    useSortBy // Add sorting hook here
   );
 
   const handleView = (id) => {
@@ -125,7 +125,6 @@ const ApplicantTable = () => {
         "School Email",
         "Barangay",
         "Date Applied",
-
       ]],
       body: filteredData.map((row) => [
         row.lrn,
@@ -168,7 +167,17 @@ const ApplicantTable = () => {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+                  {/* Add sorting indicators */}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " ▼"
+                        : " ▲"
+                      : ""}
+                  </span>
+                </th>
               ))}
             </tr>
           ))}
