@@ -38,7 +38,10 @@ const Scholars = () => {
   // Filtering scholars data based on the search term
   const filteredData = scholarsData.filter(scholar =>
     scholar.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    scholar.id.toString().includes(searchTerm)
+    scholar.id.toString().includes(searchTerm) ||
+    scholar.barangay.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    scholar.program.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    scholar.address.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Sorting filtered data based on sortColumn and sortOrder
@@ -94,12 +97,13 @@ const Scholars = () => {
   const exportToPDF = () => {
     const doc = new jsPDF();
     doc.autoTable({
-      head: [["Scholar ID", "Student Name", "Address", "Program"]],
+      head: [["Scholar ID", "Student Name", "Address", "Program","Barangay"]],
       body: filteredData.map(scholar => [  // Use filteredData here
         scholar.id,
         scholar.name,
         scholar.address,
-        scholar.program
+        scholar.program,
+        scholar.barangay,
       ]),
     });
     doc.save("scholars.pdf");
@@ -151,7 +155,7 @@ const Scholars = () => {
           <table>
             <thead>
               <tr>
-                <th>Select</th>
+                
                 <th onClick={() => handleSort('id')}>
                   Scholar ID <FontAwesomeIcon icon={faSort} />
                 </th>
@@ -164,17 +168,20 @@ const Scholars = () => {
                 <th onClick={() => handleSort('program')}>
                   Program <FontAwesomeIcon icon={faSort} />
                 </th>
+                <th onClick={() => handleSort('barangay')}>
+                  Barangay <FontAwesomeIcon icon={faSort} />
+                </th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {currentData.map((scholar, index) => (
                 <tr key={index}>
-                  <td><input type="checkbox" /></td>
                   <td>{scholar.id}</td>
                   <td>{scholar.name}</td>
                   <td>{scholar.address}</td>
                   <td>{scholar.program}</td>
+                  <td>{scholar.barangay}</td>
                   <td>
                     <button className="view-btn" onClick={() => handleView(scholar.user_id)}>
                       <FontAwesomeIcon icon={faEye} /> View

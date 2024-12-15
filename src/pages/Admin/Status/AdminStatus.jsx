@@ -30,14 +30,12 @@ const StatusPage = () => {
   }, []);
 
   const columns = useMemo(() => [
-    {
-      Header: 'Select',
-      accessor: 'UserID',
-      Cell: ({ row }) => <input type="checkbox" />
-    },
+    
     { Header: 'Student Name', accessor: 'name' },
     { Header: 'Mobile Number', accessor: 'mobile' },
     { Header: 'School Email', accessor: 'email' },
+    { Header: 'School', accessor: 'newSchool' },
+    { Header: 'Barangay', accessor: 'BARANGAY' },
     {
       Header: 'Status',
       accessor: 'status',
@@ -100,6 +98,8 @@ const StatusPage = () => {
       'Student Name': row.name,
       'Mobile Number': row.mobile,
       'School Email': row.email,
+      'School': row.newSchool,
+      'Barangay': row.BARAGAY,
       'Status': row.status,
     }));
     const ws = XLSX.utils.json_to_sheet(exportData);
@@ -114,11 +114,13 @@ const StatusPage = () => {
       row.name,
       row.mobile,
       row.email,
+      row.newSchool,
+      row.BARAGAY,
       row.status,
     ]);
     const doc = new jsPDF();
     doc.autoTable({
-      head: [['Student Name', 'Mobile Number', 'School Email', 'Status']],
+      head: [['Student Name', 'Mobile Number', 'School Email', 'School','Barangay', 'Status']],
       body: exportData,
     });
     doc.save('applicants.pdf');

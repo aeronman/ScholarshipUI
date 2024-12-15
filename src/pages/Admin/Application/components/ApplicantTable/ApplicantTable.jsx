@@ -46,12 +46,13 @@ const ApplicantTable = () => {
 
   const columns = useMemo(
     () => [
-      { Header: "Select", accessor: "select" },
+      
       { Header: "LRN/School Number", accessor: "lrn" },
       { Header: "Student Name", accessor: "name" },
       { Header: "Submitted Requirements", accessor: "requirements" },
       { Header: "School Email", accessor: "email" },
       { Header: "Barangay", accessor: "BARANGAY" },
+      { Header: "School", accessor: "newSchool" },
       {
         Header: "Action",
         accessor: "action",
@@ -129,6 +130,7 @@ const ApplicantTable = () => {
         row.requirements,
         row.email,
         row.BARANGAY,
+        row.newSchool,
       ]),
     });
     doc.save("applicants.pdf");
