@@ -18,7 +18,7 @@ export default function RegHome() {
     const fetchFacebookPosts = async () => {
       try {
         const pageId = "528014077055652"; 
-        const accessToken = "EAADbfsGjyTwBO0VVzsLHA9p7zFUF3WdZC9Bt8PGSCkKYonLpHFD6HnU0YeLP0b6MWgIIzmKTQifqgApoZAzGZAgBLisaAxtBWfv1RIwZBY5lvIBp2fniVU8tDMh3cg85UZBD3suVjpTlk02peF6vk1fP9hITSZAMDQIs4GgFZC0MmOzMP3KIn7Y6XLhsgOZCZCsQ2TuEoqXKMMULFEuACJnmlZAb1IyNWagUUJdDZBfG4oU"; 
+        const accessToken = "EAADbfsGjyTwBOZCVYfc7rm8eYelFiCPF2NzZCWbC3tvYtFmHEfuFiAeZBZBaNFw1FL1JQxjoss7ZBIyksF0Rd79f0NZAgIAg4plh0QTtYfVZAVSK7BiVjeqMYOb8ZAnrxcc5XMORb4nasqJZCP6ZBQlifGQwlgNo32mU63iYJ1mMCsWM7cfkiWP7ldMfqWbtWAX8MTNTKoJzLnuVrhBtcPwjJEZCbR7zc0j34CXmIA2sEga5UFi"; 
         const response = await fetch(
           `https://graph.facebook.com/v12.0/${pageId}/posts?access_token=${accessToken}`
         );
