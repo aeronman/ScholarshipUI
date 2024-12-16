@@ -57,10 +57,7 @@ export default function RegHome() {
           </div>
         </div>
         <div className="RegHomeDiv1-2-3 ">
-          <RegLineChart />
-        </div>
-        <div className="facebook-posts-section">
-          <h3>Latest Posts from Facebook</h3>
+        <h3>Latest Posts from Facebook</h3>
           <div className="facebook-posts">
             {facebookPosts.length > 0 ? (
               facebookPosts.map((post, index) => (
