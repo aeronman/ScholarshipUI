@@ -290,7 +290,9 @@ const RegApplication1 = forwardRef((props, ref) => {
     {/* Conditional rendering for PWD ID file upload */}
     {formData.PWD === "1" && (
         <div className="input-container-5-2">
-            <label className="applicationLabel" htmlFor="PWD_ID">PWD ID</label>
+            <label className="applicationLabel" htmlFor="PWD_ID">
+                Upload PWD ID (PDF or JPG only)
+            </label>
             <input
                 type="file"
                 name="PWD_ID"
