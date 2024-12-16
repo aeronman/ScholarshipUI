@@ -71,6 +71,7 @@ export default function RegHome() {
             )}
           </div>
         </div>
+        
         <VideoCallButton />
         <ChatbotButton />
       </div>
